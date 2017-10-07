@@ -199,12 +199,6 @@
     <Compile Include="DBContext\ASS_MOD_ACT.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\ASS_MOD_HAB.cs">
-      <DependentUpon>Model1zerzerze.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\ASS_MOD_STA.cs">
-      <DependentUpon>Model1zerzerze.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBContext\ASS_SEQ_TASK.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
@@ -212,9 +206,6 @@
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\ASS_USE_ALERT.cs">
-      <DependentUpon>Model1zerzerze.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\ASS_USE_HAB.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\ASS_USE_PRE.cs">

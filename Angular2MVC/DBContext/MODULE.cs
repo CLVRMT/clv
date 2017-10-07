@@ -18,10 +18,9 @@ namespace Angular2MVC.DBContext
         public MODULE()
         {
             this.ASS_MOD_ACT = new HashSet<ASS_MOD_ACT>();
-            this.ASS_MOD_HAB = new HashSet<ASS_MOD_HAB>();
-            this.ASS_MOD_STA = new HashSet<ASS_MOD_STA>();
             this.CFGMODULEs = new HashSet<CFGMODULE>();
             this.CFGRADIOs = new HashSet<CFGRADIO>();
+            this.STATEs = new HashSet<STATE>();
         }
     
         public int id { get; set; }
@@ -38,10 +37,6 @@ namespace Angular2MVC.DBContext
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ASS_MOD_ACT> ASS_MOD_ACT { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ASS_MOD_HAB> ASS_MOD_HAB { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ASS_MOD_STA> ASS_MOD_STA { get; set; }
         public virtual CFGDEVICE CFGDEVICE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CFGMODULE> CFGMODULEs { get; set; }
@@ -49,5 +44,7 @@ namespace Angular2MVC.DBContext
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CFGRADIO> CFGRADIOs { get; set; }
         public virtual CFGRADIO CFGRADIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<STATE> STATEs { get; set; }
     }
 }

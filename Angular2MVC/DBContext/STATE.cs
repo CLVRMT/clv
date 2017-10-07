@@ -14,12 +14,6 @@ namespace Angular2MVC.DBContext
     
     public partial class STATE
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public STATE()
-        {
-            this.ASS_MOD_STA = new HashSet<ASS_MOD_STA>();
-        }
-    
         public int id { get; set; }
         public int module_id { get; set; }
         public int priority { get; set; }
@@ -34,7 +28,6 @@ namespace Angular2MVC.DBContext
         public bool shared { get; set; }
         public int sync { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ASS_MOD_STA> ASS_MOD_STA { get; set; }
+        public virtual MODULE MODULE { get; set; }
     }
 }

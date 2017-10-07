@@ -14,10 +14,19 @@ namespace Angular2MVC.DBContext
     
     public partial class ACCOUNT
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ACCOUNT()
+        {
+            this.USERs = new HashSet<USER>();
+        }
+    
         public string id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public Nullable<bool> enabled { get; set; }
         public int sync { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<USER> USERs { get; set; }
     }
 }

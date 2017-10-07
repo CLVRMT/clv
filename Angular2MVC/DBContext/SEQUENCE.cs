@@ -14,9 +14,24 @@ namespace Angular2MVC.DBContext
     
     public partial class SEQUENCE
     {
-        public int id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SEQUENCE()
+        {
+            this.TASKs = new HashSet<TASK>();
+            this.SEQUENCEs = new HashSet<SEQUENCE>();
+        }
+    
+        public string id { get; set; }
         public string type { get; set; }
         public string name { get; set; }
-        public Nullable<int> steady_sequence_id { get; set; }
+        public string steady_sequence_id { get; set; }
+        public string cycle_id { get; set; }
+    
+        public virtual CYCLE CYCLE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TASK> TASKs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SEQUENCE> SEQUENCEs { get; set; }
+        public virtual SEQUENCE SEQUENCE1 { get; set; }
     }
 }

@@ -18,6 +18,10 @@ namespace Angular2MVC.DBContext
         public int module_id { get; set; }
         public int action_id { get; set; }
         public Nullable<int> duration { get; set; }
-        public Nullable<int> condition_id { get; set; }
+        public string condition_id { get; set; }
+        public string sequence_id { get; set; }
+    
+        public virtual SEQUENCE SEQUENCE { get; set; }
+        public virtual CONDITION CONDITIONs { get; set; }
     }
 }

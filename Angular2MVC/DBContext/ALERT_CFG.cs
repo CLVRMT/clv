@@ -14,14 +14,22 @@ namespace Angular2MVC.DBContext
     
     public partial class ALERT_CFG
     {
-        public int id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ALERT_CFG()
+        {
+            this.CONDITION = new HashSet<CONDITION>();
+        }
+    
+        public string id { get; set; }
         public Nullable<int> module_id { get; set; }
         public string message { get; set; }
         public string type { get; set; }
-        public Nullable<int> condition_id { get; set; }
         public Nullable<int> user_id { get; set; }
         public Nullable<bool> shared { get; set; }
         public Nullable<bool> sms { get; set; }
         public Nullable<bool> email { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONDITION> CONDITION { get; set; }
     }
 }

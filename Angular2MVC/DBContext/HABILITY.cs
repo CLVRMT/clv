@@ -14,20 +14,11 @@ namespace Angular2MVC.DBContext
     
     public partial class HABILITY
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HABILITY()
-        {
-            this.ASS_MOD_HAB = new HashSet<ASS_MOD_HAB>();
-        }
-    
         public int id { get; set; }
         public string type { get; set; }
         public bool can_see { get; set; }
         public bool can_upd { get; set; }
         public bool can_add { get; set; }
         public bool can_del { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ASS_MOD_HAB> ASS_MOD_HAB { get; set; }
     }
 }

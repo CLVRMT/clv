@@ -19,6 +19,7 @@ namespace Angular2MVC.DBContext
         {
             this.DESIGN_PART = new HashSet<DESIGN_PART>();
             this.DESIGN1 = new HashSet<DESIGN>();
+            this.CYCLEs = new HashSet<CYCLE>();
         }
     
         public string id { get; set; }
@@ -37,5 +38,7 @@ namespace Angular2MVC.DBContext
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DESIGN> DESIGN1 { get; set; }
         public virtual DESIGN DESIGN2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CYCLE> CYCLEs { get; set; }
     }
 }

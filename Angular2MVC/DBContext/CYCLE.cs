@@ -14,11 +14,23 @@ namespace Angular2MVC.DBContext
     
     public partial class CYCLE
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CYCLE()
+        {
+            this.SEQUENCEs = new HashSet<SEQUENCE>();
+        }
+    
         public string id { get; set; }
         public string name { get; set; }
-        public Nullable<int> condition_id { get; set; }
+        public string condition_id { get; set; }
         public string type { get; set; }
         public Nullable<int> value { get; set; }
         public string device_id { get; set; }
+        public string design_id { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SEQUENCE> SEQUENCEs { get; set; }
+        public virtual DESIGN DESIGN { get; set; }
+        public virtual CONDITION CONDITIONs { get; set; }
     }
 }

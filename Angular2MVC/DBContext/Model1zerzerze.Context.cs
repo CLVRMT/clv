@@ -35,12 +35,9 @@ namespace Angular2MVC.DBContext
         public virtual DbSet<ASS_CYCLE_DESIGNPART> ASS_CYCLE_DESIGNPART { get; set; }
         public virtual DbSet<ASS_HIS_CYC> ASS_HIS_CYC { get; set; }
         public virtual DbSet<ASS_MOD_ACT> ASS_MOD_ACT { get; set; }
-        public virtual DbSet<ASS_MOD_HAB> ASS_MOD_HAB { get; set; }
-        public virtual DbSet<ASS_MOD_STA> ASS_MOD_STA { get; set; }
         public virtual DbSet<ASS_SEQ_TASK> ASS_SEQ_TASK { get; set; }
         public virtual DbSet<ASS_USE_ACC> ASS_USE_ACC { get; set; }
         public virtual DbSet<ASS_USE_ALERT> ASS_USE_ALERT { get; set; }
-        public virtual DbSet<ASS_USE_HAB> ASS_USE_HAB { get; set; }
         public virtual DbSet<ASS_USE_PRE> ASS_USE_PRE { get; set; }
         public virtual DbSet<CFG_PREFERENCE> CFG_PREFERENCE { get; set; }
         public virtual DbSet<CFGDEVICE> CFGDEVICEs { get; set; }

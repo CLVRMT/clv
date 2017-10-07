@@ -14,7 +14,21 @@ namespace Angular2MVC.DBContext
     
     public partial class CONDITION
     {
-        public int id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CONDITION()
+        {
+            this.TASK = new HashSet<TASK>();
+            this.CYCLE = new HashSet<CYCLE>();
+        }
+    
+        public string id { get; set; }
         public string pattern { get; set; }
+        public string alert_cfg_id { get; set; }
+    
+        public virtual ALERT_CFG ALERT_CFG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TASK> TASK { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CYCLE> CYCLE { get; set; }
     }
 }
