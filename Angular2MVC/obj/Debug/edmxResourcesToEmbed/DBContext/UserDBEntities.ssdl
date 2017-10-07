@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ASS_CYCLE_DESIGNPART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="designpart_id" Type="varchar" MaxLength="100" />
+    <Property Name="cycle_id" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ASS_HIS_CYC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cycle_id" Type="int" Nullable="false" />
+    <Property Name="history_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_SEQ_TASK">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="sequence_id" Type="int" Nullable="false" />
+    <Property Name="task_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_ACC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="account_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_TASK">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="seen" Type="bit" Nullable="false" />
+    <Property Name="deleted" Type="bit" Nullable="false" />
+    <Property Name="sync" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pattern" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CONDITION_PART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sensor_cond_id" Type="int" />
+    <Property Name="relay_cond_id" Type="int" />
+    <Property Name="time_cond_id" Type="int" />
+    <Property Name="complex_cond_id" Type="int" />
+    <Property Name="security" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_RELAY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="action_id" Type="int" Nullable="false" />
+    <Property Name="operator" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_SENSOR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="value" Type="int" Nullable="false" />
+    <Property Name="operator" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CULTURE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CYCLE_PROG_TMP">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="start" Type="datetime" />
+    <Property Name="end" Type="datetime" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" />
+    <Property Name="ifc" Type="varchar" MaxLength="45" />
+    <Property Name="cycle_id" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HABILITY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="can_see" Type="bit" Nullable="false" />
+    <Property Name="can_upd" Type="bit" Nullable="false" />
+    <Property Name="can_add" Type="bit" Nullable="false" />
+    <Property Name="can_del" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEQ_NUMBER">
+    <Key>
+      <PropertyRef Name="sequence_name" />
+    </Key>
+    <Property Name="sequence_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sequence_increment" Type="bigint" Nullable="false" />
+    <Property Name="sequence_min_value" Type="bigint" Nullable="false" />
+    <Property Name="sequence_max_value" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sequence_cur_value" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="sequence_cycle" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEQUENCE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="steady_sequence_id" Type="int" />
+  </EntityType>
+  <EntityContainer Name="UserDBModelStoreContainer">
+    <EntitySet Name="ASS_CYCLE_DESIGNPART" EntityType="Self.ASS_CYCLE_DESIGNPART" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_HIS_CYC" EntityType="Self.ASS_HIS_CYC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_SEQ_TASK" EntityType="Self.ASS_SEQ_TASK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_USE_ACC" EntityType="Self.ASS_USE_ACC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_USE_TASK" EntityType="Self.ASS_USE_TASK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION" EntityType="Self.CONDITION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION_PART" EntityType="Self.CONDITION_PART" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION_RELAY" EntityType="Self.CONDITION_RELAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION_SENSOR" EntityType="Self.CONDITION_SENSOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CULTURE" EntityType="Self.CULTURE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CYCLE_PROG_TMP" EntityType="Self.CYCLE_PROG_TMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HABILITY" EntityType="Self.HABILITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEQ_NUMBER" EntityType="Self.SEQ_NUMBER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEQUENCE" EntityType="Self.SEQUENCE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

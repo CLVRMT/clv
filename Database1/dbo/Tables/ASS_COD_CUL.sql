@@ -1,0 +1,19 @@
+﻿CREATE TABLE [dbo].[ASS_COD_CUL] (
+    [id]         INT IDENTITY (1, 1) NOT NULL,
+    [codval_id]  INT NOT NULL,
+    [culture_id] INT NOT NULL,
+    CONSTRAINT [PK_ASS_COD_CUL] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [fk_ASS_COD_CUL_CODVAL1] FOREIGN KEY ([codval_id]) REFERENCES [dbo].[CODVAL] ([id]),
+    CONSTRAINT [fk_ASS_COD_CUL_CULTURE1] FOREIGN KEY ([culture_id]) REFERENCES [dbo].[CULTURE] ([id])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_fk_ASS_COD_CUL_CULTURE1]
+    ON [dbo].[ASS_COD_CUL]([culture_id] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_fk_ASS_COD_CUL_CODVAL1]
+    ON [dbo].[ASS_COD_CUL]([codval_id] ASC);
+

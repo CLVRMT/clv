@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CLEVEREMOTE_RSBModelStoreContainer" CdmEntityContainer="CLEVEREMOTE_RSBEntities">
+    <EntitySetMapping Name="ACCOUNT">
+      <EntityTypeMapping TypeName="CLEVEREMOTE_RSBModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTION">
+      <EntityTypeMapping TypeName="CLEVEREMOTE_RSBModel.ACTION">
+        <MappingFragment StoreEntitySet="ACTION">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="default" ColumnName="default" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

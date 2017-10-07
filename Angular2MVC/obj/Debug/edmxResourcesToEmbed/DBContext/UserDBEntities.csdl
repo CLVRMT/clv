@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UserDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ASS_CYCLE_DESIGNPART" EntityType="UserDBModel.ASS_CYCLE_DESIGNPART" />
+    <EntitySet Name="ASS_HIS_CYC" EntityType="UserDBModel.ASS_HIS_CYC" />
+    <EntitySet Name="ASS_SEQ_TASK" EntityType="UserDBModel.ASS_SEQ_TASK" />
+    <EntitySet Name="ASS_USE_ACC" EntityType="UserDBModel.ASS_USE_ACC" />
+    <EntitySet Name="ASS_USE_TASK" EntityType="UserDBModel.ASS_USE_TASK" />
+    <EntitySet Name="CONDITIONs" EntityType="UserDBModel.CONDITION" />
+    <EntitySet Name="CONDITION_PART" EntityType="UserDBModel.CONDITION_PART" />
+    <EntitySet Name="CONDITION_RELAY" EntityType="UserDBModel.CONDITION_RELAY" />
+    <EntitySet Name="CONDITION_SENSOR" EntityType="UserDBModel.CONDITION_SENSOR" />
+    <EntitySet Name="CULTUREs" EntityType="UserDBModel.CULTURE" />
+    <EntitySet Name="CYCLE_PROG_TMP" EntityType="UserDBModel.CYCLE_PROG_TMP" />
+    <EntitySet Name="SEQ_NUMBER" EntityType="UserDBModel.SEQ_NUMBER" />
+    <EntitySet Name="SEQUENCEs" EntityType="UserDBModel.SEQUENCE" />
+  </EntityContainer>
+  <EntityType Name="ASS_CYCLE_DESIGNPART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="designpart_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cycle_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ASS_HIS_CYC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="cycle_id" Type="Int32" Nullable="false" />
+    <Property Name="history_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_SEQ_TASK">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="sequence_id" Type="Int32" Nullable="false" />
+    <Property Name="task_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_ACC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="account_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sync" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_TASK">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="task_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="seen" Type="Boolean" Nullable="false" />
+    <Property Name="deleted" Type="Boolean" Nullable="false" />
+    <Property Name="sync" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pattern" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_PART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sensor_cond_id" Type="Int32" />
+    <Property Name="relay_cond_id" Type="Int32" />
+    <Property Name="time_cond_id" Type="Int32" />
+    <Property Name="complex_cond_id" Type="Int32" />
+    <Property Name="security" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_RELAY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="module_id" Type="Int32" Nullable="false" />
+    <Property Name="action_id" Type="Int32" Nullable="false" />
+    <Property Name="operator" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_SENSOR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="module_id" Type="Int32" Nullable="false" />
+    <Property Name="value" Type="Int32" Nullable="false" />
+    <Property Name="operator" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CULTURE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="NavigationProperty1" />
+  </EntityType>
+  <EntityType Name="CYCLE_PROG_TMP">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="start" Type="DateTime" Precision="3" />
+    <Property Name="end" Type="DateTime" Precision="3" />
+    <Property Name="user_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ifc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="cycle_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SEQ_NUMBER">
+    <Key>
+      <PropertyRef Name="sequence_name" />
+    </Key>
+    <Property Name="sequence_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sequence_increment" Type="Int64" Nullable="false" />
+    <Property Name="sequence_min_value" Type="Int64" Nullable="false" />
+    <Property Name="sequence_max_value" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="sequence_cur_value" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="sequence_cycle" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEQUENCE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="steady_sequence_id" Type="Int32" />
+  </EntityType>
+</Schema>

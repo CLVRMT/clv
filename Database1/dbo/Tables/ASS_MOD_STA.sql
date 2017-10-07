@@ -1,0 +1,20 @@
+﻿CREATE TABLE [dbo].[ASS_MOD_STA] (
+    [id]        INT IDENTITY (1, 1) NOT NULL,
+    [module_id] INT NOT NULL,
+    [state_id]  INT NOT NULL,
+    [sync]      INT NOT NULL,
+    CONSTRAINT [PK_ASS_MOD_STA] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [fk_ASS_MOD_STA_MODULE1] FOREIGN KEY ([module_id]) REFERENCES [dbo].[MODULE] ([id]),
+    CONSTRAINT [fk_ASS_MOD_STA_STATE1] FOREIGN KEY ([state_id]) REFERENCES [dbo].[STATE] ([id])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_fk_ASS_MOD_STA_STATE1]
+    ON [dbo].[ASS_MOD_STA]([state_id] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_fk_ASS_MOD_STA_MODULE1]
+    ON [dbo].[ASS_MOD_STA]([module_id] ASC);
+

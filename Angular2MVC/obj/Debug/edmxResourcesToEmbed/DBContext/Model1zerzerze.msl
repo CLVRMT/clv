@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Model1zerzerze" />
+  <Alias Key="Target" Value="Model1zerzerze.Store" />
+  <EntityContainerMapping CdmEntityContainer="Model1zerzerzeContainer" StorageEntityContainer="Model1zerzerzeStoreContainer">
+    <EntitySetMapping Name="ACCOUNTs">
+      <EntityTypeMapping TypeName="Model1zerzerze.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIONs">
+      <EntityTypeMapping TypeName="Model1zerzerze.ACTION">
+        <MappingFragment StoreEntitySet="ACTION">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="default" ColumnName="default" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ALERTs">
+      <EntityTypeMapping TypeName="Model1zerzerze.ALERT">
+        <MappingFragment StoreEntitySet="ALERT">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="alert_id" ColumnName="alert_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ALERT_CFG">
+      <EntityTypeMapping TypeName="Model1zerzerze.ALERT_CFG">
+        <MappingFragment StoreEntitySet="ALERT_CFG">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sms" ColumnName="sms" />
+          <ScalarProperty Name="shared" ColumnName="shared" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="condition_id" ColumnName="condition_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_COD_CUL">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_COD_CUL">
+        <MappingFragment StoreEntitySet="ASS_COD_CUL">
+          <ScalarProperty Name="culture_id" ColumnName="culture_id" />
+          <ScalarProperty Name="codval_id" ColumnName="codval_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_COND_PART">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_COND_PART">
+        <MappingFragment StoreEntitySet="ASS_COND_PART">
+          <ScalarProperty Name="condition_part_id" ColumnName="condition_part_id" />
+          <ScalarProperty Name="condition_id" ColumnName="condition_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_CYC_SEQ">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_CYC_SEQ">
+        <MappingFragment StoreEntitySet="ASS_CYC_SEQ">
+          <ScalarProperty Name="sequence_id" ColumnName="sequence_id" />
+          <ScalarProperty Name="cycle_id" ColumnName="cycle_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_CYCLE_DESIGNPART">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_CYCLE_DESIGNPART">
+        <MappingFragment StoreEntitySet="ASS_CYCLE_DESIGNPART">
+          <ScalarProperty Name="cycle_id" ColumnName="cycle_id" />
+          <ScalarProperty Name="designpart_id" ColumnName="designpart_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_HIS_CYC">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_HIS_CYC">
+        <MappingFragment StoreEntitySet="ASS_HIS_CYC">
+          <ScalarProperty Name="history_id" ColumnName="history_id" />
+          <ScalarProperty Name="cycle_id" ColumnName="cycle_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_MOD_ACT">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_MOD_ACT">
+        <MappingFragment StoreEntitySet="ASS_MOD_ACT">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_MOD_HAB">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_MOD_HAB">
+        <MappingFragment StoreEntitySet="ASS_MOD_HAB">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="hability_id" ColumnName="hability_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_MOD_STA">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_MOD_STA">
+        <MappingFragment StoreEntitySet="ASS_MOD_STA">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_SEQ_TASK">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_SEQ_TASK">
+        <MappingFragment StoreEntitySet="ASS_SEQ_TASK">
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="sequence_id" ColumnName="sequence_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_USE_ACC">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_USE_ACC">
+        <MappingFragment StoreEntitySet="ASS_USE_ACC">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_USE_ALERT">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_USE_ALERT">
+        <MappingFragment StoreEntitySet="ASS_USE_ALERT">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="seen" ColumnName="seen" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="alert_id" ColumnName="alert_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_USE_HAB">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_USE_HAB">
+        <MappingFragment StoreEntitySet="ASS_USE_HAB">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="hability_id" ColumnName="hability_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_USE_PRE">
+      <EntityTypeMapping TypeName="Model1zerzerze.ASS_USE_PRE">
+        <MappingFragment StoreEntitySet="ASS_USE_PRE">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="preference_id" ColumnName="preference_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CFG_PREFERENCE">
+      <EntityTypeMapping TypeName="Model1zerzerze.CFG_PREFERENCE">
+        <MappingFragment StoreEntitySet="CFG_PREFERENCE">
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CFGDEVICEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.CFGDEVICE">
+        <MappingFragment StoreEntitySet="CFGDEVICE">
+          <ScalarProperty Name="def" ColumnName="def" />
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="server_ip" ColumnName="server_ip" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+          <ScalarProperty Name="registred" ColumnName="registred" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="is_local" ColumnName="is_local" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CFGMODULEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.CFGMODULE">
+        <MappingFragment StoreEntitySet="CFGMODULE">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="port_num" ColumnName="port_num" />
+          <ScalarProperty Name="radio_id" ColumnName="radio_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CFGRADIOs">
+      <EntityTypeMapping TypeName="Model1zerzerze.CFGRADIO">
+        <MappingFragment StoreEntitySet="CFGRADIO">
+          <ScalarProperty Name="db" ColumnName="db" />
+          <ScalarProperty Name="is_connected" ColumnName="is_connected" />
+          <ScalarProperty Name="battery_level" ColumnName="battery_level" />
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="io" ColumnName="io" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="digital_mask" ColumnName="digital_mask" />
+          <ScalarProperty Name="analog_mask" ColumnName="analog_mask" />
+          <ScalarProperty Name="current_analog_mask" ColumnName="current_analog_mask" />
+          <ScalarProperty Name="current_digital_mask" ColumnName="current_digital_mask" />
+          <ScalarProperty Name="device_id" ColumnName="device_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CODVALs">
+      <EntityTypeMapping TypeName="Model1zerzerze.CODVAL">
+        <MappingFragment StoreEntitySet="CODVAL">
+          <ScalarProperty Name="val" ColumnName="val" />
+          <ScalarProperty Name="cod" ColumnName="cod" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITIONs">
+      <EntityTypeMapping TypeName="Model1zerzerze.CONDITION">
+        <MappingFragment StoreEntitySet="CONDITION">
+          <ScalarProperty Name="pattern" ColumnName="pattern" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITION_PART">
+      <EntityTypeMapping TypeName="Model1zerzerze.CONDITION_PART">
+        <MappingFragment StoreEntitySet="CONDITION_PART">
+          <ScalarProperty Name="security" ColumnName="security" />
+          <ScalarProperty Name="complex_cond_id" ColumnName="complex_cond_id" />
+          <ScalarProperty Name="time_cond_id" ColumnName="time_cond_id" />
+          <ScalarProperty Name="relay_cond_id" ColumnName="relay_cond_id" />
+          <ScalarProperty Name="sensor_cond_id" ColumnName="sensor_cond_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITION_RELAY">
+      <EntityTypeMapping TypeName="Model1zerzerze.CONDITION_RELAY">
+        <MappingFragment StoreEntitySet="CONDITION_RELAY">
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITION_SENSOR">
+      <EntityTypeMapping TypeName="Model1zerzerze.CONDITION_SENSOR">
+        <MappingFragment StoreEntitySet="CONDITION_SENSOR">
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITION_TIME">
+      <EntityTypeMapping TypeName="Model1zerzerze.CONDITION_TIME">
+        <MappingFragment StoreEntitySet="CONDITION_TIME">
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CULTUREs">
+      <EntityTypeMapping TypeName="Model1zerzerze.CULTURE">
+        <MappingFragment StoreEntitySet="CULTURE">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CULTURE_LIB">
+      <EntityTypeMapping TypeName="Model1zerzerze.CULTURE_LIB">
+        <MappingFragment StoreEntitySet="CULTURE_LIB">
+          <ScalarProperty Name="lib" ColumnName="lib" />
+          <ScalarProperty Name="asscodcul_id" ColumnName="asscodcul_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CYCLEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.CYCLE">
+        <MappingFragment StoreEntitySet="CYCLE">
+          <ScalarProperty Name="device_id" ColumnName="device_id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="condition_id" ColumnName="condition_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DESIGNs">
+      <EntityTypeMapping TypeName="Model1zerzerze.DESIGN">
+        <MappingFragment StoreEntitySet="DESIGN">
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="device_id" ColumnName="device_id" />
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="def" ColumnName="def" />
+          <ScalarProperty Name="png" ColumnName="png" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DESIGN_PART">
+      <EntityTypeMapping TypeName="Model1zerzerze.DESIGN_PART">
+        <MappingFragment StoreEntitySet="DESIGN_PART">
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="design_id" ColumnName="design_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEVICEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.DEVICE">
+        <MappingFragment StoreEntitySet="DEVICE">
+          <ScalarProperty Name="cfg_id" ColumnName="cfg_id" />
+          <ScalarProperty Name="default" ColumnName="default" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HABILITies">
+      <EntityTypeMapping TypeName="Model1zerzerze.HABILITY">
+        <MappingFragment StoreEntitySet="HABILITY">
+          <ScalarProperty Name="can_del" ColumnName="can_del" />
+          <ScalarProperty Name="can_add" ColumnName="can_add" />
+          <ScalarProperty Name="can_upd" ColumnName="can_upd" />
+          <ScalarProperty Name="can_see" ColumnName="can_see" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HISTORies">
+      <EntityTypeMapping TypeName="Model1zerzerze.HISTORY">
+        <MappingFragment StoreEntitySet="HISTORY">
+          <ScalarProperty Name="ifc" ColumnName="ifc" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="end" ColumnName="end" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="cycle_id" ColumnName="cycle_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HISTORY_ALERT">
+      <EntityTypeMapping TypeName="Model1zerzerze.HISTORY_ALERT">
+        <MappingFragment StoreEntitySet="HISTORY_ALERT">
+          <ScalarProperty Name="sms_sent" ColumnName="sms_sent" />
+          <ScalarProperty Name="seen" ColumnName="seen" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="cfg_alert_id" ColumnName="cfg_alert_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MODULEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.MODULE">
+        <MappingFragment StoreEntitySet="MODULE">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="cfgfolder_id" ColumnName="cfgfolder_id" />
+          <ScalarProperty Name="cfgdevice_id" ColumnName="cfgdevice_id" />
+          <ScalarProperty Name="cfgmodule_id" ColumnName="cfgmodule_id" />
+          <ScalarProperty Name="cfgradio_id" ColumnName="cfgradio_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PREFERENCEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.PREFERENCE">
+        <MappingFragment StoreEntitySet="PREFERENCE">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="n_mail" ColumnName="n_mail" />
+          <ScalarProperty Name="n_sms" ColumnName="n_sms" />
+          <ScalarProperty Name="refresh_auto" ColumnName="refresh_auto" />
+          <ScalarProperty Name="activity_log" ColumnName="activity_log" />
+          <ScalarProperty Name="activity_save" ColumnName="activity_save" />
+          <ScalarProperty Name="cfg_save" ColumnName="cfg_save" />
+          <ScalarProperty Name="themes" ColumnName="themes" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="culture_id" ColumnName="culture_id" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEQ_NUMBER">
+      <EntityTypeMapping TypeName="Model1zerzerze.SEQ_NUMBER">
+        <MappingFragment StoreEntitySet="SEQ_NUMBER">
+          <ScalarProperty Name="sequence_cycle" ColumnName="sequence_cycle" />
+          <ScalarProperty Name="sequence_cur_value" ColumnName="sequence_cur_value" />
+          <ScalarProperty Name="sequence_max_value" ColumnName="sequence_max_value" />
+          <ScalarProperty Name="sequence_min_value" ColumnName="sequence_min_value" />
+          <ScalarProperty Name="sequence_increment" ColumnName="sequence_increment" />
+          <ScalarProperty Name="sequence_name" ColumnName="sequence_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEQUENCEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.SEQUENCE">
+        <MappingFragment StoreEntitySet="SEQUENCE">
+          <ScalarProperty Name="steady_sequence_id" ColumnName="steady_sequence_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATEs">
+      <EntityTypeMapping TypeName="Model1zerzerze.STATE">
+        <MappingFragment StoreEntitySet="STATE">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="shared" ColumnName="shared" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="inc_val" ColumnName="inc_val" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="prefix" ColumnName="prefix" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="type_cmp" ColumnName="type_cmp" />
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYNCs">
+      <EntityTypeMapping TypeName="Model1zerzerze.SYNC">
+        <MappingFragment StoreEntitySet="SYNC">
+          <ScalarProperty Name="Done" ColumnName="Done" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TASKs">
+      <EntityTypeMapping TypeName="Model1zerzerze.TASK">
+        <MappingFragment StoreEntitySet="TASK">
+          <ScalarProperty Name="condition_id" ColumnName="condition_id" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUsers">
+      <EntityTypeMapping TypeName="Model1zerzerze.TblUser">
+        <MappingFragment StoreEntitySet="TblUser">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSCEIVER_PORT">
+      <EntityTypeMapping TypeName="Model1zerzerze.TRANSCEIVER_PORT">
+        <MappingFragment StoreEntitySet="TRANSCEIVER_PORT">
+          <ScalarProperty Name="port_type" ColumnName="port_type" />
+          <ScalarProperty Name="port_num" ColumnName="port_num" />
+          <ScalarProperty Name="io" ColumnName="io" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="Model1zerzerze.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user1" ColumnName="user1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1zerzerze.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="enabled" Type="bit" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="code" Type="varchar(max)" />
+    <Property Name="default" Type="bit" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ALERT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="alert_id" Type="int" />
+    <Property Name="source" Type="varchar" MaxLength="5" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="name" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="ALERT_CFG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="module_id" Type="int" />
+    <Property Name="message" Type="varchar" MaxLength="512" />
+    <Property Name="type" Type="varchar" MaxLength="4" />
+    <Property Name="condition_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="shared" Type="bit" />
+    <Property Name="sms" Type="bit" />
+    <Property Name="email" Type="bit" />
+  </EntityType>
+  <EntityType Name="ASS_COD_CUL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codval_id" Type="int" Nullable="false" />
+    <Property Name="culture_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_COND_PART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="condition_id" Type="int" Nullable="false" />
+    <Property Name="condition_part_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_CYC_SEQ">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cycle_id" Type="int" Nullable="false" />
+    <Property Name="sequence_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_CYCLE_DESIGNPART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="designpart_id" Type="varchar" MaxLength="100" />
+    <Property Name="cycle_id" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ASS_HIS_CYC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cycle_id" Type="int" Nullable="false" />
+    <Property Name="history_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_MOD_ACT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="action_id" Type="int" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_MOD_HAB">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="hability_id" Type="int" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_MOD_STA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="state_id" Type="int" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_SEQ_TASK">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="sequence_id" Type="int" Nullable="false" />
+    <Property Name="task_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_ACC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="account_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_ALERT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alert_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="seen" Type="bit" Nullable="false" />
+    <Property Name="deleted" Type="bit" Nullable="false" />
+    <Property Name="sync" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_HAB">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hability_id" Type="int" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ASS_USE_PRE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="preference_id" Type="int" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CFG_PREFERENCE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CFGDEVICE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="account_id" Type="int" Nullable="false" />
+    <Property Name="ip_address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="is_local" Type="bit" Nullable="false" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="icon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="serial" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="registred" Type="bit" Nullable="false" />
+    <Property Name="updated" Type="bit" Nullable="false" />
+    <Property Name="server_ip" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+    <Property Name="def" Type="bit" />
+  </EntityType>
+  <EntityType Name="CFGMODULE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="radio_id" Type="int" Nullable="false" />
+    <Property Name="port_num" Type="int" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CFGRADIO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="device_id" Type="int" Nullable="false" />
+    <Property Name="current_digital_mask" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="current_analog_mask" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="analog_mask" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="digital_mask" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="io" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+    <Property Name="battery_level" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_connected" Type="bit" Nullable="false" />
+    <Property Name="db" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CODVAL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cod" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="val" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pattern" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CONDITION_PART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sensor_cond_id" Type="int" />
+    <Property Name="relay_cond_id" Type="int" />
+    <Property Name="time_cond_id" Type="int" />
+    <Property Name="complex_cond_id" Type="int" />
+    <Property Name="security" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_RELAY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="action_id" Type="int" Nullable="false" />
+    <Property Name="operator" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_SENSOR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="value" Type="int" Nullable="false" />
+    <Property Name="operator" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONDITION_TIME">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="start_date" Type="datetime" Nullable="false" />
+    <Property Name="operator" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="CULTURE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CULTURE_LIB">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="asscodcul_id" Type="int" Nullable="false" />
+    <Property Name="lib" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CYCLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="condition_id" Type="int" />
+    <Property Name="type" Type="varchar" MaxLength="10" />
+    <Property Name="value" Type="int" />
+    <Property Name="device_id" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DESIGN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="2000" />
+    <Property Name="type" Type="varchar" MaxLength="3" />
+    <Property Name="parent_id" Type="varchar" MaxLength="50" />
+    <Property Name="data" Type="varbinary(max)" />
+    <Property Name="png" Type="varbinary(max)" />
+    <Property Name="def" Type="bit" />
+    <Property Name="sync" Type="bit" />
+    <Property Name="device_id" Type="varchar" MaxLength="50" />
+    <Property Name="parent" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DESIGN_PART">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="2000" />
+    <Property Name="type" Type="varchar" MaxLength="3" />
+    <Property Name="design_id" Type="varchar" MaxLength="50" />
+    <Property Name="detail_id" Type="varchar" MaxLength="50" />
+    <Property Name="sync" Type="bit" />
+    <Property Name="parent" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DEVICE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="45" />
+    <Property Name="account_id" Type="varchar" MaxLength="45" />
+    <Property Name="default" Type="bit" />
+    <Property Name="cfg_id" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="HABILITY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="can_see" Type="bit" Nullable="false" />
+    <Property Name="can_upd" Type="bit" Nullable="false" />
+    <Property Name="can_add" Type="bit" Nullable="false" />
+    <Property Name="can_del" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HISTORY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cycle_id" Type="varchar" MaxLength="100" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" />
+    <Property Name="type" Type="varchar" MaxLength="10" />
+    <Property Name="start" Type="datetime" />
+    <Property Name="end" Type="datetime" />
+    <Property Name="value" Type="int" />
+    <Property Name="ifc" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="HISTORY_ALERT">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cfg_alert_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="value" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="seen" Type="bit" Nullable="false" />
+    <Property Name="sms_sent" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MODULE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="cfgradio_id" Type="int" />
+    <Property Name="cfgmodule_id" Type="int" />
+    <Property Name="cfgdevice_id" Type="int" />
+    <Property Name="cfgfolder_id" Type="int" />
+    <Property Name="icon" Type="varchar" MaxLength="100" />
+    <Property Name="comment" Type="varchar" MaxLength="255" />
+    <Property Name="sync" Type="int" />
+  </EntityType>
+  <EntityType Name="PREFERENCE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="enabled" Type="int" />
+    <Property Name="culture_id" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="255" />
+    <Property Name="themes" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cfg_save" Type="bit" Nullable="false" />
+    <Property Name="activity_save" Type="bit" Nullable="false" />
+    <Property Name="activity_log" Type="bit" Nullable="false" />
+    <Property Name="refresh_auto" Type="bit" Nullable="false" />
+    <Property Name="n_sms" Type="bit" Nullable="false" />
+    <Property Name="n_mail" Type="bit" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEQ_NUMBER">
+    <Key>
+      <PropertyRef Name="sequence_name" />
+    </Key>
+    <Property Name="sequence_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sequence_increment" Type="bigint" Nullable="false" />
+    <Property Name="sequence_min_value" Type="bigint" Nullable="false" />
+    <Property Name="sequence_max_value" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sequence_cur_value" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="sequence_cycle" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEQUENCE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="steady_sequence_id" Type="int" />
+  </EntityType>
+  <EntityType Name="STATE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="priority" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="action_id" Type="int" />
+    <Property Name="type_cmp" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="50" />
+    <Property Name="prefix" Type="varchar" MaxLength="255" />
+    <Property Name="suffix" Type="varchar" MaxLength="255" />
+    <Property Name="inc_val" Type="bit" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="shared" Type="bit" Nullable="false" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SYNC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Object" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ObjectId" Type="int" Nullable="false" />
+    <Property Name="Action" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Query" Type="varchar(max)" Nullable="false" />
+    <Property Name="Done" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TASK">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="action_id" Type="int" Nullable="false" />
+    <Property Name="duration" Type="int" />
+    <Property Name="condition_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="FirstName" MaxLength="250" Type="nvarchar" />
+    <Property Name="LastName" MaxLength="250" Type="nvarchar" />
+    <Property Name="Gender" MaxLength="250" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="TRANSCEIVER_PORT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="io" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="port_num" Type="int" Nullable="false" />
+    <Property Name="port_type" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="user1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" />
+    <Property Name="sync" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_ASS_COD_CUL_CODVAL1">
+    <End Role="CODVAL" Type="Self.CODVAL" Multiplicity="1" />
+    <End Role="ASS_COD_CUL" Type="Self.ASS_COD_CUL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CODVAL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_COD_CUL">
+        <PropertyRef Name="codval_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ASS_COD_CUL_CULTURE1">
+    <End Role="CULTURE" Type="Self.CULTURE" Multiplicity="1" />
+    <End Role="ASS_COD_CUL" Type="Self.ASS_COD_CUL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CULTURE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_COD_CUL">
+        <PropertyRef Name="culture_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ASS_MOD_ACT_ACTION1">
+    <End Role="ACTION" Type="Self.ACTION" Multiplicity="1" />
+    <End Role="ASS_MOD_ACT" Type="Self.ASS_MOD_ACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTION">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_MOD_ACT">
+        <PropertyRef Name="action_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ASS_MOD_ACT_MODULE1">
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
+    <End Role="ASS_MOD_ACT" Type="Self.ASS_MOD_ACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODULE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_MOD_ACT">
+        <PropertyRef Name="module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ASS_MOD_HAB_HABILITY1">
+    <End Role="HABILITY" Type="Self.HABILITY" Multiplicity="1" />
+    <End Role="ASS_MOD_HAB" Type="Self.ASS_MOD_HAB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HABILITY">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_MOD_HAB">
+        <PropertyRef Name="hability_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ASS_MOD_HAB_MODULE1">
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
+    <End Role="ASS_MOD_HAB" Type="Self.ASS_MOD_HAB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODULE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_MOD_HAB">
+        <PropertyRef Name="module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ASS_MOD_STA_MODULE1">
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
+    <End Role="ASS_MOD_STA" Type="Self.ASS_MOD_STA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODULE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_MOD_STA">
+        <PropertyRef Name="module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ASS_MOD_STA_STATE1">
+    <End Role="STATE" Type="Self.STATE" Multiplicity="1" />
+    <End Role="ASS_MOD_STA" Type="Self.ASS_MOD_STA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ASS_MOD_STA">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CFGMODULE_MODULE1">
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
+    <End Role="CFGMODULE" Type="Self.CFGMODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODULE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CFGMODULE">
+        <PropertyRef Name="radio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CFGRADIO_MODULE1">
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
+    <End Role="CFGRADIO" Type="Self.CFGRADIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODULE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CFGRADIO">
+        <PropertyRef Name="device_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CULTURE_LIB_ASS_COD_CUL1">
+    <End Role="ASS_COD_CUL" Type="Self.ASS_COD_CUL" Multiplicity="1" />
+    <End Role="CULTURE_LIB" Type="Self.CULTURE_LIB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ASS_COD_CUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CULTURE_LIB">
+        <PropertyRef Name="asscodcul_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DESIGN_PART_DESIGN">
+    <End Role="DESIGN" Type="Self.DESIGN" Multiplicity="0..1" />
+    <End Role="DESIGN_PART" Type="Self.DESIGN_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DESIGN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DESIGN_PART">
+        <PropertyRef Name="design_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fki">
+    <End Role="DESIGN" Type="Self.DESIGN" Multiplicity="0..1" />
+    <End Role="DESIGN1" Type="Self.DESIGN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DESIGN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DESIGN1">
+        <PropertyRef Name="parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MODULE_CFGDEVICE1">
+    <End Role="CFGDEVICE" Type="Self.CFGDEVICE" Multiplicity="0..1" />
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CFGDEVICE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MODULE">
+        <PropertyRef Name="cfgdevice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MODULE_CFGMODULE1">
+    <End Role="CFGMODULE" Type="Self.CFGMODULE" Multiplicity="0..1" />
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CFGMODULE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MODULE">
+        <PropertyRef Name="cfgmodule_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MODULE_CFGRADIO1">
+    <End Role="CFGRADIO" Type="Self.CFGRADIO" Multiplicity="0..1" />
+    <End Role="MODULE" Type="Self.MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CFGRADIO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MODULE">
+        <PropertyRef Name="cfgradio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PREFERENCE_CULTURE1">
+    <End Role="CULTURE" Type="Self.CULTURE" Multiplicity="1" />
+    <End Role="PREFERENCE" Type="Self.PREFERENCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CULTURE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PREFERENCE">
+        <PropertyRef Name="culture_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Model1zerzerzeStoreContainer">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTION" EntityType="Self.ACTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ALERT" EntityType="Self.ALERT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ALERT_CFG" EntityType="Self.ALERT_CFG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_COD_CUL" EntityType="Self.ASS_COD_CUL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_COND_PART" EntityType="Self.ASS_COND_PART" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_CYC_SEQ" EntityType="Self.ASS_CYC_SEQ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_CYCLE_DESIGNPART" EntityType="Self.ASS_CYCLE_DESIGNPART" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_HIS_CYC" EntityType="Self.ASS_HIS_CYC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_MOD_ACT" EntityType="Self.ASS_MOD_ACT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_MOD_HAB" EntityType="Self.ASS_MOD_HAB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_MOD_STA" EntityType="Self.ASS_MOD_STA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_SEQ_TASK" EntityType="Self.ASS_SEQ_TASK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_USE_ACC" EntityType="Self.ASS_USE_ACC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_USE_ALERT" EntityType="Self.ASS_USE_ALERT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_USE_HAB" EntityType="Self.ASS_USE_HAB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASS_USE_PRE" EntityType="Self.ASS_USE_PRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CFG_PREFERENCE" EntityType="Self.CFG_PREFERENCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CFGDEVICE" EntityType="Self.CFGDEVICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CFGMODULE" EntityType="Self.CFGMODULE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CFGRADIO" EntityType="Self.CFGRADIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CODVAL" EntityType="Self.CODVAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION" EntityType="Self.CONDITION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION_PART" EntityType="Self.CONDITION_PART" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION_RELAY" EntityType="Self.CONDITION_RELAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION_SENSOR" EntityType="Self.CONDITION_SENSOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDITION_TIME" EntityType="Self.CONDITION_TIME" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CULTURE" EntityType="Self.CULTURE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CULTURE_LIB" EntityType="Self.CULTURE_LIB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CYCLE" EntityType="Self.CYCLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DESIGN" EntityType="Self.DESIGN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DESIGN_PART" EntityType="Self.DESIGN_PART" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEVICE" EntityType="Self.DEVICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HABILITY" EntityType="Self.HABILITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HISTORY" EntityType="Self.HISTORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HISTORY_ALERT" EntityType="Self.HISTORY_ALERT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MODULE" EntityType="Self.MODULE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PREFERENCE" EntityType="Self.PREFERENCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEQ_NUMBER" EntityType="Self.SEQ_NUMBER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEQUENCE" EntityType="Self.SEQUENCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STATE" EntityType="Self.STATE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYNC" EntityType="Self.SYNC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TASK" EntityType="Self.TASK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANSCEIVER_PORT" EntityType="Self.TRANSCEIVER_PORT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_ASS_COD_CUL_CODVAL1" Association="Self.fk_ASS_COD_CUL_CODVAL1">
+      <End Role="CODVAL" EntitySet="CODVAL" />
+      <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ASS_COD_CUL_CULTURE1" Association="Self.fk_ASS_COD_CUL_CULTURE1">
+      <End Role="CULTURE" EntitySet="CULTURE" />
+      <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ASS_MOD_ACT_ACTION1" Association="Self.fk_ASS_MOD_ACT_ACTION1">
+      <End Role="ACTION" EntitySet="ACTION" />
+      <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ASS_MOD_ACT_MODULE1" Association="Self.fk_ASS_MOD_ACT_MODULE1">
+      <End Role="MODULE" EntitySet="MODULE" />
+      <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ASS_MOD_HAB_HABILITY1" Association="Self.fk_ASS_MOD_HAB_HABILITY1">
+      <End Role="HABILITY" EntitySet="HABILITY" />
+      <End Role="ASS_MOD_HAB" EntitySet="ASS_MOD_HAB" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ASS_MOD_HAB_MODULE1" Association="Self.fk_ASS_MOD_HAB_MODULE1">
+      <End Role="MODULE" EntitySet="MODULE" />
+      <End Role="ASS_MOD_HAB" EntitySet="ASS_MOD_HAB" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ASS_MOD_STA_MODULE1" Association="Self.fk_ASS_MOD_STA_MODULE1">
+      <End Role="MODULE" EntitySet="MODULE" />
+      <End Role="ASS_MOD_STA" EntitySet="ASS_MOD_STA" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ASS_MOD_STA_STATE1" Association="Self.fk_ASS_MOD_STA_STATE1">
+      <End Role="STATE" EntitySet="STATE" />
+      <End Role="ASS_MOD_STA" EntitySet="ASS_MOD_STA" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CFGMODULE_MODULE1" Association="Self.fk_CFGMODULE_MODULE1">
+      <End Role="MODULE" EntitySet="MODULE" />
+      <End Role="CFGMODULE" EntitySet="CFGMODULE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CFGRADIO_MODULE1" Association="Self.fk_CFGRADIO_MODULE1">
+      <End Role="MODULE" EntitySet="MODULE" />
+      <End Role="CFGRADIO" EntitySet="CFGRADIO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CULTURE_LIB_ASS_COD_CUL1" Association="Self.fk_CULTURE_LIB_ASS_COD_CUL1">
+      <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
+      <End Role="CULTURE_LIB" EntitySet="CULTURE_LIB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DESIGN_PART_DESIGN" Association="Self.FK_DESIGN_PART_DESIGN">
+      <End Role="DESIGN" EntitySet="DESIGN" />
+      <End Role="DESIGN_PART" EntitySet="DESIGN_PART" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fki" Association="Self.FK_fki">
+      <End Role="DESIGN" EntitySet="DESIGN" />
+      <End Role="DESIGN1" EntitySet="DESIGN" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MODULE_CFGDEVICE1" Association="Self.fk_MODULE_CFGDEVICE1">
+      <End Role="CFGDEVICE" EntitySet="CFGDEVICE" />
+      <End Role="MODULE" EntitySet="MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MODULE_CFGMODULE1" Association="Self.fk_MODULE_CFGMODULE1">
+      <End Role="CFGMODULE" EntitySet="CFGMODULE" />
+      <End Role="MODULE" EntitySet="MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MODULE_CFGRADIO1" Association="Self.fk_MODULE_CFGRADIO1">
+      <End Role="CFGRADIO" EntitySet="CFGRADIO" />
+      <End Role="MODULE" EntitySet="MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PREFERENCE_CULTURE1" Association="Self.fk_PREFERENCE_CULTURE1">
+      <End Role="CULTURE" EntitySet="CULTURE" />
+      <End Role="PREFERENCE" EntitySet="PREFERENCE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

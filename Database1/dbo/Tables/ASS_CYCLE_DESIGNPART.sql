@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[ASS_CYCLE_DESIGNPART] (
+    [id]            VARCHAR (100) NOT NULL,
+    [designpart_id] VARCHAR (100) NULL,
+    [cycle_id]      VARCHAR (100) NULL,
+    CONSTRAINT [PK_ASS_CYCLE_DESIGNPART] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+

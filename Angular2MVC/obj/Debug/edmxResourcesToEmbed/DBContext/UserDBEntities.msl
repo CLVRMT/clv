@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UserDBModelStoreContainer" CdmEntityContainer="UserDBEntities">
+    <EntitySetMapping Name="ASS_CYCLE_DESIGNPART">
+      <EntityTypeMapping TypeName="UserDBModel.ASS_CYCLE_DESIGNPART">
+        <MappingFragment StoreEntitySet="ASS_CYCLE_DESIGNPART">
+          <ScalarProperty Name="cycle_id" ColumnName="cycle_id" />
+          <ScalarProperty Name="designpart_id" ColumnName="designpart_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_HIS_CYC">
+      <EntityTypeMapping TypeName="UserDBModel.ASS_HIS_CYC">
+        <MappingFragment StoreEntitySet="ASS_HIS_CYC">
+          <ScalarProperty Name="history_id" ColumnName="history_id" />
+          <ScalarProperty Name="cycle_id" ColumnName="cycle_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_SEQ_TASK">
+      <EntityTypeMapping TypeName="UserDBModel.ASS_SEQ_TASK">
+        <MappingFragment StoreEntitySet="ASS_SEQ_TASK">
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="sequence_id" ColumnName="sequence_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_USE_ACC">
+      <EntityTypeMapping TypeName="UserDBModel.ASS_USE_ACC">
+        <MappingFragment StoreEntitySet="ASS_USE_ACC">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASS_USE_TASK">
+      <EntityTypeMapping TypeName="UserDBModel.ASS_USE_TASK">
+        <MappingFragment StoreEntitySet="ASS_USE_TASK">
+          <ScalarProperty Name="sync" ColumnName="sync" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="seen" ColumnName="seen" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITIONs">
+      <EntityTypeMapping TypeName="UserDBModel.CONDITION">
+        <MappingFragment StoreEntitySet="CONDITION">
+          <ScalarProperty Name="pattern" ColumnName="pattern" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITION_PART">
+      <EntityTypeMapping TypeName="UserDBModel.CONDITION_PART">
+        <MappingFragment StoreEntitySet="CONDITION_PART">
+          <ScalarProperty Name="security" ColumnName="security" />
+          <ScalarProperty Name="complex_cond_id" ColumnName="complex_cond_id" />
+          <ScalarProperty Name="time_cond_id" ColumnName="time_cond_id" />
+          <ScalarProperty Name="relay_cond_id" ColumnName="relay_cond_id" />
+          <ScalarProperty Name="sensor_cond_id" ColumnName="sensor_cond_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITION_RELAY">
+      <EntityTypeMapping TypeName="UserDBModel.CONDITION_RELAY">
+        <MappingFragment StoreEntitySet="CONDITION_RELAY">
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITION_SENSOR">
+      <EntityTypeMapping TypeName="UserDBModel.CONDITION_SENSOR">
+        <MappingFragment StoreEntitySet="CONDITION_SENSOR">
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CULTUREs">
+      <EntityTypeMapping TypeName="UserDBModel.CULTURE">
+        <MappingFragment StoreEntitySet="CULTURE">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CYCLE_PROG_TMP">
+      <EntityTypeMapping TypeName="UserDBModel.CYCLE_PROG_TMP">
+        <MappingFragment StoreEntitySet="CYCLE_PROG_TMP">
+          <ScalarProperty Name="cycle_id" ColumnName="cycle_id" />
+          <ScalarProperty Name="ifc" ColumnName="ifc" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="end" ColumnName="end" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEQ_NUMBER">
+      <EntityTypeMapping TypeName="UserDBModel.SEQ_NUMBER">
+        <MappingFragment StoreEntitySet="SEQ_NUMBER">
+          <ScalarProperty Name="sequence_cycle" ColumnName="sequence_cycle" />
+          <ScalarProperty Name="sequence_cur_value" ColumnName="sequence_cur_value" />
+          <ScalarProperty Name="sequence_max_value" ColumnName="sequence_max_value" />
+          <ScalarProperty Name="sequence_min_value" ColumnName="sequence_min_value" />
+          <ScalarProperty Name="sequence_increment" ColumnName="sequence_increment" />
+          <ScalarProperty Name="sequence_name" ColumnName="sequence_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEQUENCEs">
+      <EntityTypeMapping TypeName="UserDBModel.SEQUENCE">
+        <MappingFragment StoreEntitySet="SEQUENCE">
+          <ScalarProperty Name="steady_sequence_id" ColumnName="steady_sequence_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

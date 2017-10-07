@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database1</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7241a132-66a4-4209-8438-48533e7034b6}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database1</RootNamespace>
+    <AssemblyName>Database1</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\USER.sql" />
+    <Build Include="dbo\Tables\TRANSCEIVER_PORT.sql" />
+    <Build Include="dbo\Tables\TblUser.sql" />
+    <Build Include="dbo\Tables\TASK_OLD.sql" />
+    <Build Include="dbo\Tables\TASK.sql" />
+    <Build Include="dbo\Tables\SYNC.sql" />
+    <Build Include="dbo\Tables\STATE.sql" />
+    <Build Include="dbo\Tables\SEQUENCE.sql" />
+    <Build Include="dbo\Tables\SEQ_NUMBER.sql" />
+    <Build Include="dbo\Tables\PREFERENCE.sql" />
+    <Build Include="dbo\Tables\MODULE.sql" />
+    <Build Include="dbo\Tables\LOGGER.sql" />
+    <Build Include="dbo\Tables\HISTORY_OLD.sql" />
+    <Build Include="dbo\Tables\HISTORY_ALERT.sql" />
+    <Build Include="dbo\Tables\HISTORY.sql" />
+    <Build Include="dbo\Tables\HABILITY.sql" />
+    <Build Include="dbo\Tables\DEVICE.sql" />
+    <Build Include="dbo\Tables\DESIGN_PART.sql" />
+    <Build Include="dbo\Tables\DESIGN.sql" />
+    <Build Include="dbo\Tables\CYCLE_PROG_TMP.sql" />
+    <Build Include="dbo\Tables\CYCLE.sql" />
+    <Build Include="dbo\Tables\CULTURE_LIB.sql" />
+    <Build Include="dbo\Tables\CULTURE.sql" />
+    <Build Include="dbo\Tables\CONDITION_TIME.sql" />
+    <Build Include="dbo\Tables\CONDITION_SENSOR.sql" />
+    <Build Include="dbo\Tables\CONDITION_RELAY.sql" />
+    <Build Include="dbo\Tables\CONDITION_PART.sql" />
+    <Build Include="dbo\Tables\CONDITION.sql" />
+    <Build Include="dbo\Tables\CODVAL.sql" />
+    <Build Include="dbo\Tables\CFGRADIO.sql" />
+    <Build Include="dbo\Tables\CFGMODULE.sql" />
+    <Build Include="dbo\Tables\CFGFOLDER.sql" />
+    <Build Include="dbo\Tables\CFGDEVICE.sql" />
+    <Build Include="dbo\Tables\CFG_PREFERENCE.sql" />
+    <Build Include="dbo\Tables\bleach.sql" />
+    <Build Include="dbo\Tables\ASS_USE_TASK.sql" />
+    <Build Include="dbo\Tables\ASS_USE_PRE.sql" />
+    <Build Include="dbo\Tables\ASS_USE_LOG.sql" />
+    <Build Include="dbo\Tables\ASS_USE_HAB.sql" />
+    <Build Include="dbo\Tables\ASS_USE_ALERT.sql" />
+    <Build Include="dbo\Tables\ASS_USE_ACC.sql" />
+    <Build Include="dbo\Tables\ASS_SEQ_TASK.sql" />
+    <Build Include="dbo\Tables\ASS_MOD_STA.sql" />
+    <Build Include="dbo\Tables\ASS_MOD_HAB.sql" />
+    <Build Include="dbo\Tables\ASS_MOD_ALE.sql" />
+    <Build Include="dbo\Tables\ASS_MOD_ACT.sql" />
+    <Build Include="dbo\Tables\ASS_HIS_CYC.sql" />
+    <Build Include="dbo\Tables\ASS_CYCLE_DESIGNPART.sql" />
+    <Build Include="dbo\Tables\ASS_CYC_SEQ.sql" />
+    <Build Include="dbo\Tables\ASS_COND_PART.sql" />
+    <Build Include="dbo\Tables\ASS_COD_CUL.sql" />
+    <Build Include="dbo\Tables\ALERT_CFG.sql" />
+    <Build Include="dbo\Tables\ALERT.sql" />
+    <Build Include="dbo\Tables\ACTION.sql" />
+    <Build Include="dbo\Tables\ACCOUNT.sql" />
+  </ItemGroup>
+</Project>

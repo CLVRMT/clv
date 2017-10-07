@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="60753105fe50450ca3fe1879ae19d48f" Name="Diagram1" ZoomLevel="66" >
+        <EntityTypeShape EntityType="Model1zerzerze.ALERT" Width="1.5" PointX="37.875" PointY="0.875" />
+        <EntityTypeShape EntityType="Model1zerzerze.ALERT_CFG" Width="1.5" PointX="56.75" PointY="1.375" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_COD_CUL" Width="1.5" PointX="20.25" PointY="8.125" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_COND_PART" Width="1.5" PointX="60.375" PointY="2.875" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_CYC_SEQ" Width="1.5" PointX="50.75" PointY="5.875" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_CYCLE_DESIGNPART" Width="2.75" PointX="46.125" PointY="4" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_HIS_CYC" Width="1.5" PointX="47.375" PointY="5.875" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_MOD_ACT" Width="1.5" PointX="3" PointY="10.5" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_MOD_HAB" Width="1.5" PointX="5.5" PointY="18.625" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_MOD_STA" Width="1.5" PointX="6.25" PointY="15.125" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_SEQ_TASK" Width="1.5" PointX="54.375" PointY="7.5" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_USE_ACC" Width="1.5" PointX="25.25" PointY="18.375" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_USE_ALERT" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_USE_HAB" Width="1.5" PointX="9.75" PointY="18.625" />
+        <EntityTypeShape EntityType="Model1zerzerze.ASS_USE_PRE" Width="1.5" PointX="22" PointY="14.625" />
+        <EntityTypeShape EntityType="Model1zerzerze.CFG_PREFERENCE" Width="2" PointX="21.875" PointY="11.25" />
+        <EntityTypeShape EntityType="Model1zerzerze.CFGDEVICE" Width="1.5" PointX="0.5" PointY="14.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.CFGMODULE" Width="1.5" PointX="0.5" PointY="19" />
+        <EntityTypeShape EntityType="Model1zerzerze.CFGRADIO" Width="1.5" PointX="0.5" PointY="21.625" />
+        <EntityTypeShape EntityType="Model1zerzerze.CODVAL" Width="1.5" PointX="18" PointY="6.375" />
+        <EntityTypeShape EntityType="Model1zerzerze.CONDITION" Width="1.875" PointX="58.375" PointY="1.375" />
+        <EntityTypeShape EntityType="Model1zerzerze.CONDITION_PART" Width="2.75" PointX="61.5" PointY="4.625" />
+        <EntityTypeShape EntityType="Model1zerzerze.CONDITION_RELAY" Width="2.75" PointX="61.5" PointY="7" />
+        <EntityTypeShape EntityType="Model1zerzerze.CONDITION_SENSOR" Width="2.75" PointX="61.5" PointY="9" />
+        <EntityTypeShape EntityType="Model1zerzerze.CONDITION_TIME" Width="2.75" PointX="61.5" PointY="11" />
+        <EntityTypeShape EntityType="Model1zerzerze.CULTURE" Width="1.5" PointX="18" PointY="9.375" />
+        <EntityTypeShape EntityType="Model1zerzerze.CULTURE_LIB" Width="1.5" PointX="22.5" PointY="8.375" />
+        <EntityTypeShape EntityType="Model1zerzerze.CYCLE" Width="1.5" PointX="49.125" PointY="4" />
+        <EntityTypeShape EntityType="Model1zerzerze.DESIGN" Width="1.5" PointX="43.625" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.DESIGN_PART" Width="1.5" PointX="45.875" PointY="1.25" />
+        <EntityTypeShape EntityType="Model1zerzerze.DEVICE" Width="1.5" PointX="42.625" PointY="6.5" />
+        <EntityTypeShape EntityType="Model1zerzerze.HABILITY" Width="1.5" PointX="7.625" PointY="18.625" />
+        <EntityTypeShape EntityType="Model1zerzerze.HISTORY" Width="1.5" PointX="45.75" PointY="7.125" />
+        <EntityTypeShape EntityType="Model1zerzerze.HISTORY_ALERT" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.MODULE" Width="1.5" PointX="3" PointY="14.5" />
+        <EntityTypeShape EntityType="Model1zerzerze.PREFERENCE" Width="1.5" PointX="20.25" PointY="11.25" />
+        <EntityTypeShape EntityType="Model1zerzerze.SEQ_NUMBER" Width="1.5" PointX="9" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.SEQUENCE" Width="1.5" PointX="52.625" PointY="6.375" />
+        <EntityTypeShape EntityType="Model1zerzerze.STATE" Width="1.5" PointX="8.75" PointY="14.25" />
+        <EntityTypeShape EntityType="Model1zerzerze.SYNC" Width="1.5" PointX="21" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.TASK" Width="1.625" PointX="56" PointY="8.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.TRANSCEIVER_PORT" Width="2.75" PointX="12" PointY="20" />
+        <EntityTypeShape EntityType="Model1zerzerze.USER" Width="1.5" PointX="23.625" PointY="16" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_MOD_ACT_ACTION1" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_COD_CUL_CODVAL1" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_COD_CUL_CULTURE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_CULTURE_LIB_ASS_COD_CUL1" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_MOD_HAB_HABILITY1" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_MOD_HAB_MODULE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_MOD_STA_MODULE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_MOD_STA_STATE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_MODULE_CFGDEVICE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_CFGMODULE_MODULE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_MODULE_CFGMODULE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_CFGRADIO_MODULE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_MODULE_CFGRADIO1" />
+        <AssociationConnector Association="Model1zerzerze.FK_DESIGN_PART_DESIGN" />
+        <AssociationConnector Association="Model1zerzerze.fki" />
+        <AssociationConnector Association="Model1zerzerze.fk_ASS_MOD_ACT_MODULE1" />
+        <AssociationConnector Association="Model1zerzerze.fk_PREFERENCE_CULTURE1" />
+        <EntityTypeShape EntityType="Model1zerzerze.ACCOUNT" Width="1.5" PointX="26.875" PointY="16.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.ACTION" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="Model1zerzerze.TblUser" PointX="17.625" PointY="0.75" Width="1.5" />
+        <AssociationConnector Association="Model1zerzerze.FK_fki" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CLEVEREMOTE_RSBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CLEVEREMOTE_RSBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCOUNT" EntityType="CLEVEREMOTE_RSBModel.ACCOUNT" />
+    <EntitySet Name="ACTION" EntityType="CLEVEREMOTE_RSBModel.ACTION" />
+  </EntityContainer>
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="enabled" Type="Boolean" />
+    <Property Name="sync" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="default" Type="Boolean" />
+    <Property Name="sync" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>
