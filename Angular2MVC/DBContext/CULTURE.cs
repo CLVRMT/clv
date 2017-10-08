@@ -18,7 +18,6 @@ namespace Angular2MVC.DBContext
         public CULTURE()
         {
             this.ASS_COD_CUL = new HashSet<ASS_COD_CUL>();
-            this.PREFERENCEs = new HashSet<PREFERENCE>();
         }
     
         public int id { get; set; }
@@ -26,7 +25,5 @@ namespace Angular2MVC.DBContext
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ASS_COD_CUL> ASS_COD_CUL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PREFERENCE> PREFERENCEs { get; set; }
     }
 }

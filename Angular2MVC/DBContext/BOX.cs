@@ -12,14 +12,16 @@ namespace Angular2MVC.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class ASS_MOD_ACT
+    public partial class BOX : DEVICE
     {
-        public int id { get; set; }
-        public int module_id { get; set; }
-        public int action_id { get; set; }
-        public int sync { get; set; }
-    
-        public virtual ACTION ACTION { get; set; }
-        public virtual MODULE MODULE { get; set; }
+        public Nullable<bool> @default { get; set; }
+        public int account_id { get; set; }
+        public string ip_address { get; set; }
+        public bool is_local { get; set; }
+        public bool state { get; set; }
+        public string serial { get; set; }
+        public bool registred { get; set; }
+        public bool updated { get; set; }
+        public string server_ip { get; set; }
     }
 }

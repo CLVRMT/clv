@@ -12,11 +12,17 @@ namespace Angular2MVC.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class TRANSCEIVER_PORT
+    public partial class TRANCIEVER : DEVICE
     {
-        public int id { get; set; }
+        public string current_analog_mask { get; set; }
+        public string analog_mask { get; set; }
+        public string digital_mask { get; set; }
+        public string current_digital_mask { get; set; }
+        public int device_id { get; set; }
+        public string address { get; set; }
         public string io { get; set; }
-        public int port_num { get; set; }
-        public string port_type { get; set; }
+        public decimal battery_level { get; set; }
+        public bool is_connected { get; set; }
+        public int db { get; set; }
     }
 }

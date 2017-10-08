@@ -89,15 +89,6 @@
           <Property Name="cycle_id" Type="int" Nullable="false" />
           <Property Name="history_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="ASS_MOD_ACT">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="module_id" Type="int" Nullable="false" />
-          <Property Name="action_id" Type="int" Nullable="false" />
-          <Property Name="sync" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="ASS_SEQ_TASK">
           <Key>
             <PropertyRef Name="id" />
@@ -144,23 +135,6 @@
           <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
-        <EntityType Name="CFGDEVICE">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="account_id" Type="int" Nullable="false" />
-          <Property Name="ip_address" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="is_local" Type="bit" Nullable="false" />
-          <Property Name="state" Type="bit" Nullable="false" />
-          <Property Name="icon" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="serial" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="registred" Type="bit" Nullable="false" />
-          <Property Name="updated" Type="bit" Nullable="false" />
-          <Property Name="server_ip" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="sync" Type="int" Nullable="false" />
-          <Property Name="def" Type="bit" />
-        </EntityType>
         <EntityType Name="CFGMODULE">
           <Key>
             <PropertyRef Name="id" />
@@ -170,23 +144,6 @@
           <Property Name="port_num" Type="int" Nullable="false" />
           <Property Name="color" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="sync" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="CFGRADIO">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="device_id" Type="int" Nullable="false" />
-          <Property Name="current_digital_mask" Type="varchar" MaxLength="4" Nullable="false" />
-          <Property Name="current_analog_mask" Type="varchar" MaxLength="2" Nullable="false" />
-          <Property Name="analog_mask" Type="varchar" MaxLength="2" Nullable="false" />
-          <Property Name="digital_mask" Type="varchar" MaxLength="2" Nullable="false" />
-          <Property Name="address" Type="varchar" MaxLength="16" Nullable="false" />
-          <Property Name="io" Type="varchar" MaxLength="3" Nullable="false" />
-          <Property Name="sync" Type="int" Nullable="false" />
-          <Property Name="battery_level" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="is_connected" Type="bit" Nullable="false" />
-          <Property Name="db" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="CODVAL">
           <Key>
@@ -444,15 +401,6 @@
           <Property Name="LastName" MaxLength="250" Type="nvarchar" />
           <Property Name="Gender" MaxLength="250" Type="nvarchar" />
         </EntityType>
-        <EntityType Name="TRANSCEIVER_PORT">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="io" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="port_num" Type="int" Nullable="false" />
-          <Property Name="port_type" Type="varchar" MaxLength="5" Nullable="false" />
-        </EntityType>
         <EntityType Name="USER">
           <Key>
             <PropertyRef Name="id" />
@@ -491,30 +439,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_ASS_MOD_ACT_ACTION1">
-          <End Role="ACTION" Type="Self.ACTION" Multiplicity="1" />
-          <End Role="ASS_MOD_ACT" Type="Self.ASS_MOD_ACT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ACTION">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ASS_MOD_ACT">
-              <PropertyRef Name="action_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_ASS_MOD_ACT_MODULE1">
-          <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
-          <End Role="ASS_MOD_ACT" Type="Self.ASS_MOD_ACT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MODULE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ASS_MOD_ACT">
-              <PropertyRef Name="module_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_CFGMODULE_MODULE1">
           <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
           <End Role="CFGMODULE" Type="Self.CFGMODULE" Multiplicity="*" />
@@ -524,18 +448,6 @@
             </Principal>
             <Dependent Role="CFGMODULE">
               <PropertyRef Name="radio_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_CFGRADIO_MODULE1">
-          <End Role="MODULE" Type="Self.MODULE" Multiplicity="1" />
-          <End Role="CFGRADIO" Type="Self.CFGRADIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MODULE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="CFGRADIO">
-              <PropertyRef Name="device_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -575,18 +487,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_MODULE_CFGDEVICE1">
-          <End Role="CFGDEVICE" Type="Self.CFGDEVICE" Multiplicity="0..1" />
-          <End Role="MODULE" Type="Self.MODULE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CFGDEVICE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="MODULE">
-              <PropertyRef Name="cfgdevice_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_MODULE_CFGMODULE1">
           <End Role="CFGMODULE" Type="Self.CFGMODULE" Multiplicity="0..1" />
           <End Role="MODULE" Type="Self.MODULE" Multiplicity="*" />
@@ -596,18 +496,6 @@
             </Principal>
             <Dependent Role="MODULE">
               <PropertyRef Name="cfgmodule_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_MODULE_CFGRADIO1">
-          <End Role="CFGRADIO" Type="Self.CFGRADIO" Multiplicity="0..1" />
-          <End Role="MODULE" Type="Self.MODULE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CFGRADIO">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="MODULE">
-              <PropertyRef Name="cfgradio_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -633,15 +521,12 @@
           <EntitySet Name="ASS_CYC_SEQ" EntityType="Self.ASS_CYC_SEQ" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASS_CYCLE_DESIGNPART" EntityType="Self.ASS_CYCLE_DESIGNPART" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASS_HIS_CYC" EntityType="Self.ASS_HIS_CYC" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ASS_MOD_ACT" EntityType="Self.ASS_MOD_ACT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASS_SEQ_TASK" EntityType="Self.ASS_SEQ_TASK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASS_USE_ACC" EntityType="Self.ASS_USE_ACC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASS_USE_ALERT" EntityType="Self.ASS_USE_ALERT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASS_USE_PRE" EntityType="Self.ASS_USE_PRE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CFG_PREFERENCE" EntityType="Self.CFG_PREFERENCE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CFGDEVICE" EntityType="Self.CFGDEVICE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CFGMODULE" EntityType="Self.CFGMODULE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CFGRADIO" EntityType="Self.CFGRADIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CODVAL" EntityType="Self.CODVAL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONDITION" EntityType="Self.CONDITION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONDITION_PART" EntityType="Self.CONDITION_PART" Schema="dbo" store:Type="Tables" />
@@ -665,7 +550,6 @@
           <EntitySet Name="SYNC" EntityType="Self.SYNC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TASK" EntityType="Self.TASK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TRANSCEIVER_PORT" EntityType="Self.TRANSCEIVER_PORT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_ASS_COD_CUL_CODVAL1" Association="Self.fk_ASS_COD_CUL_CODVAL1">
             <End Role="CODVAL" EntitySet="CODVAL" />
@@ -675,21 +559,9 @@
             <End Role="CULTURE" EntitySet="CULTURE" />
             <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
           </AssociationSet>
-          <AssociationSet Name="fk_ASS_MOD_ACT_ACTION1" Association="Self.fk_ASS_MOD_ACT_ACTION1">
-            <End Role="ACTION" EntitySet="ACTION" />
-            <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
-          </AssociationSet>
-          <AssociationSet Name="fk_ASS_MOD_ACT_MODULE1" Association="Self.fk_ASS_MOD_ACT_MODULE1">
-            <End Role="MODULE" EntitySet="MODULE" />
-            <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
-          </AssociationSet>
           <AssociationSet Name="fk_CFGMODULE_MODULE1" Association="Self.fk_CFGMODULE_MODULE1">
             <End Role="MODULE" EntitySet="MODULE" />
             <End Role="CFGMODULE" EntitySet="CFGMODULE" />
-          </AssociationSet>
-          <AssociationSet Name="fk_CFGRADIO_MODULE1" Association="Self.fk_CFGRADIO_MODULE1">
-            <End Role="MODULE" EntitySet="MODULE" />
-            <End Role="CFGRADIO" EntitySet="CFGRADIO" />
           </AssociationSet>
           <AssociationSet Name="fk_CULTURE_LIB_ASS_COD_CUL1" Association="Self.fk_CULTURE_LIB_ASS_COD_CUL1">
             <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
@@ -703,16 +575,8 @@
             <End Role="DESIGN" EntitySet="DESIGN" />
             <End Role="DESIGN1" EntitySet="DESIGN" />
           </AssociationSet>
-          <AssociationSet Name="fk_MODULE_CFGDEVICE1" Association="Self.fk_MODULE_CFGDEVICE1">
-            <End Role="CFGDEVICE" EntitySet="CFGDEVICE" />
-            <End Role="MODULE" EntitySet="MODULE" />
-          </AssociationSet>
           <AssociationSet Name="fk_MODULE_CFGMODULE1" Association="Self.fk_MODULE_CFGMODULE1">
             <End Role="CFGMODULE" EntitySet="CFGMODULE" />
-            <End Role="MODULE" EntitySet="MODULE" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MODULE_CFGRADIO1" Association="Self.fk_MODULE_CFGRADIO1">
-            <End Role="CFGRADIO" EntitySet="CFGRADIO" />
             <End Role="MODULE" EntitySet="MODULE" />
           </AssociationSet>
           <AssociationSet Name="fk_PREFERENCE_CULTURE1" Association="Self.fk_PREFERENCE_CULTURE1">
@@ -734,15 +598,11 @@
           <EntitySet Name="ASS_CYC_SEQ" EntityType="Model1zerzerze.ASS_CYC_SEQ" />
           <EntitySet Name="ASS_CYCLE_DESIGNPART" EntityType="Model1zerzerze.ASS_CYCLE_DESIGNPART" />
           <EntitySet Name="ASS_HIS_CYC" EntityType="Model1zerzerze.ASS_HIS_CYC" />
-          <EntitySet Name="ASS_MOD_ACT" EntityType="Model1zerzerze.ASS_MOD_ACT" />
           <EntitySet Name="ASS_SEQ_TASK" EntityType="Model1zerzerze.ASS_SEQ_TASK" />
           <EntitySet Name="ASS_USE_ACC" EntityType="Model1zerzerze.ASS_USE_ACC" />
           <EntitySet Name="ASS_USE_ALERT" EntityType="Model1zerzerze.ASS_USE_ALERT" />
           <EntitySet Name="ASS_USE_PRE" EntityType="Model1zerzerze.ASS_USE_PRE" />
           <EntitySet Name="CFG_PREFERENCE" EntityType="Model1zerzerze.CFG_PREFERENCE" />
-          <EntitySet Name="CFGDEVICEs" EntityType="Model1zerzerze.CFGDEVICE" />
-          <EntitySet Name="CFGMODULEs" EntityType="Model1zerzerze.CFGMODULE" />
-          <EntitySet Name="CFGRADIOs" EntityType="Model1zerzerze.CFGRADIO" />
           <EntitySet Name="CODVALs" EntityType="Model1zerzerze.CODVAL" />
           <EntitySet Name="CONDITIONs" EntityType="Model1zerzerze.CONDITION" />
           <EntitySet Name="CONDITION_PART" EntityType="Model1zerzerze.CONDITION_PART" />
@@ -754,11 +614,10 @@
           <EntitySet Name="CYCLEs" EntityType="Model1zerzerze.CYCLE" />
           <EntitySet Name="DESIGNs" EntityType="Model1zerzerze.DESIGN" />
           <EntitySet Name="DESIGN_PART" EntityType="Model1zerzerze.DESIGN_PART" />
-          <EntitySet Name="DEVICEs" EntityType="Model1zerzerze.DEVICE" />
           <EntitySet Name="HABILITies" EntityType="Model1zerzerze.HABILITY" />
           <EntitySet Name="HISTORies" EntityType="Model1zerzerze.HISTORY" />
           <EntitySet Name="HISTORY_ALERT" EntityType="Model1zerzerze.HISTORY_ALERT" />
-          <EntitySet Name="MODULEs" EntityType="Model1zerzerze.MODULE" />
+          <EntitySet Name="DEVICEs" EntityType="Model1zerzerze.DEVICE" />
           <EntitySet Name="PREFERENCEs" EntityType="Model1zerzerze.PREFERENCE" />
           <EntitySet Name="SEQ_NUMBER" EntityType="Model1zerzerze.SEQ_NUMBER" />
           <EntitySet Name="SEQUENCEs" EntityType="Model1zerzerze.SEQUENCE" />
@@ -766,12 +625,7 @@
           <EntitySet Name="SYNCs" EntityType="Model1zerzerze.SYNC" />
           <EntitySet Name="TASKs" EntityType="Model1zerzerze.TASK" />
           <EntitySet Name="TblUsers" EntityType="Model1zerzerze.TblUser" />
-          <EntitySet Name="TRANSCEIVER_PORT" EntityType="Model1zerzerze.TRANSCEIVER_PORT" />
           <EntitySet Name="USERs" EntityType="Model1zerzerze.USER" />
-          <AssociationSet Name="fk_ASS_MOD_ACT_ACTION1" Association="Model1zerzerze.fk_ASS_MOD_ACT_ACTION1">
-            <End Role="ACTION" EntitySet="ACTIONs" />
-            <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
-          </AssociationSet>
           <AssociationSet Name="fk_ASS_COD_CUL_CODVAL1" Association="Model1zerzerze.fk_ASS_COD_CUL_CODVAL1">
             <End Role="CODVAL" EntitySet="CODVALs" />
             <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
@@ -783,34 +637,6 @@
           <AssociationSet Name="fk_CULTURE_LIB_ASS_COD_CUL1" Association="Model1zerzerze.fk_CULTURE_LIB_ASS_COD_CUL1">
             <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
             <End Role="CULTURE_LIB" EntitySet="CULTURE_LIB" />
-          </AssociationSet>
-          <AssociationSet Name="fk_ASS_MOD_ACT_MODULE1" Association="Model1zerzerze.fk_ASS_MOD_ACT_MODULE1">
-            <End Role="MODULE" EntitySet="MODULEs" />
-            <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MODULE_CFGDEVICE1" Association="Model1zerzerze.fk_MODULE_CFGDEVICE1">
-            <End Role="CFGDEVICE" EntitySet="CFGDEVICEs" />
-            <End Role="MODULE" EntitySet="MODULEs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_CFGMODULE_MODULE1" Association="Model1zerzerze.fk_CFGMODULE_MODULE1">
-            <End Role="MODULE" EntitySet="MODULEs" />
-            <End Role="CFGMODULE" EntitySet="CFGMODULEs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MODULE_CFGMODULE1" Association="Model1zerzerze.fk_MODULE_CFGMODULE1">
-            <End Role="CFGMODULE" EntitySet="CFGMODULEs" />
-            <End Role="MODULE" EntitySet="MODULEs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_CFGRADIO_MODULE1" Association="Model1zerzerze.fk_CFGRADIO_MODULE1">
-            <End Role="MODULE" EntitySet="MODULEs" />
-            <End Role="CFGRADIO" EntitySet="CFGRADIOs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MODULE_CFGRADIO1" Association="Model1zerzerze.fk_MODULE_CFGRADIO1">
-            <End Role="CFGRADIO" EntitySet="CFGRADIOs" />
-            <End Role="MODULE" EntitySet="MODULEs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_PREFERENCE_CULTURE1" Association="Model1zerzerze.fk_PREFERENCE_CULTURE1">
-            <End Role="CULTURE" EntitySet="CULTUREs" />
-            <End Role="PREFERENCE" EntitySet="PREFERENCEs" />
           </AssociationSet>
           <AssociationSet Name="FK_DESIGN_PART_DESIGN" Association="Model1zerzerze.FK_DESIGN_PART_DESIGN">
             <End Role="DESIGN" EntitySet="DESIGNs" />
@@ -852,10 +678,6 @@
             <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
             <End Role="USER" EntitySet="USERs" />
           </AssociationSet>
-          <AssociationSet Name="MODULESTATE" Association="Model1zerzerze.MODULESTATE">
-            <End Role="MODULE" EntitySet="MODULEs" />
-            <End Role="STATE" EntitySet="STATEs" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ACCOUNT">
           <Key>
@@ -877,7 +699,6 @@
           <Property Name="code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="default" Type="Boolean" />
           <Property Name="sync" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ASS_MOD_ACT" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_ACTION1" FromRole="ACTION" ToRole="ASS_MOD_ACT" />
         </EntityType>
         <EntityType Name="ALERT">
           <Key>
@@ -946,17 +767,6 @@
           <Property Name="cycle_id" Type="Int32" Nullable="false" />
           <Property Name="history_id" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="ASS_MOD_ACT">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="module_id" Type="Int32" Nullable="false" />
-          <Property Name="action_id" Type="Int32" Nullable="false" />
-          <Property Name="sync" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ACTION" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_ACTION1" FromRole="ASS_MOD_ACT" ToRole="ACTION" />
-          <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_MODULE1" FromRole="ASS_MOD_ACT" ToRole="MODULE" />
-        </EntityType>
         <EntityType Name="ASS_SEQ_TASK">
           <Key>
             <PropertyRef Name="id" />
@@ -1003,54 +813,9 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="value" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="CFGDEVICE">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="account_id" Type="Int32" Nullable="false" />
-          <Property Name="ip_address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="is_local" Type="Boolean" Nullable="false" />
-          <Property Name="state" Type="Boolean" Nullable="false" />
-          <Property Name="icon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="serial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="registred" Type="Boolean" Nullable="false" />
-          <Property Name="updated" Type="Boolean" Nullable="false" />
-          <Property Name="server_ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="sync" Type="Int32" Nullable="false" />
-          <Property Name="def" Type="Boolean" />
-          <NavigationProperty Name="MODULEs" Relationship="Model1zerzerze.fk_MODULE_CFGDEVICE1" FromRole="CFGDEVICE" ToRole="MODULE" />
-        </EntityType>
-        <EntityType Name="CFGMODULE">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <EntityType Name="MODULE" BaseType="Model1zerzerze.DEVICE">
           <Property Name="radio_id" Type="Int32" Nullable="false" />
           <Property Name="port_num" Type="Int32" Nullable="false" />
-          <Property Name="color" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="sync" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_CFGMODULE_MODULE1" FromRole="CFGMODULE" ToRole="MODULE" />
-          <NavigationProperty Name="MODULEs" Relationship="Model1zerzerze.fk_MODULE_CFGMODULE1" FromRole="CFGMODULE" ToRole="MODULE" />
-        </EntityType>
-        <EntityType Name="CFGRADIO">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="device_id" Type="Int32" Nullable="false" />
-          <Property Name="current_digital_mask" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="current_analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="digital_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="address" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="io" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="sync" Type="Int32" Nullable="false" />
-          <Property Name="battery_level" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="is_connected" Type="Boolean" Nullable="false" />
-          <Property Name="db" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_CFGRADIO_MODULE1" FromRole="CFGRADIO" ToRole="MODULE" />
-          <NavigationProperty Name="MODULEs" Relationship="Model1zerzerze.fk_MODULE_CFGRADIO1" FromRole="CFGRADIO" ToRole="MODULE" />
         </EntityType>
         <EntityType Name="CODVAL">
           <Key>
@@ -1116,7 +881,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ASS_COD_CUL" Relationship="Model1zerzerze.fk_ASS_COD_CUL_CULTURE1" FromRole="CULTURE" ToRole="ASS_COD_CUL" />
-          <NavigationProperty Name="PREFERENCEs" Relationship="Model1zerzerze.fk_PREFERENCE_CULTURE1" FromRole="CULTURE" ToRole="PREFERENCE" />
         </EntityType>
         <EntityType Name="CULTURE_LIB">
           <Key>
@@ -1174,15 +938,16 @@
           <Property Name="parent" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DESIGN" Relationship="Model1zerzerze.FK_DESIGN_PART_DESIGN" FromRole="DESIGN_PART" ToRole="DESIGN" />
         </EntityType>
-        <EntityType Name="DEVICE">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="account_id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        <EntityType Name="BOX" BaseType="Model1zerzerze.DEVICE">
           <Property Name="default" Type="Boolean" />
-          <Property Name="cfg_id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="account_id" Type="Int32" Nullable="false" />
+          <Property Name="ip_address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_local" Type="Boolean" Nullable="false" />
+          <Property Name="state" Type="Boolean" Nullable="false" />
+          <Property Name="serial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="registred" Type="Boolean" Nullable="false" />
+          <Property Name="updated" Type="Boolean" Nullable="false" />
+          <Property Name="server_ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="HABILITY">
           <Key>
@@ -1221,28 +986,15 @@
           <Property Name="seen" Type="Boolean" Nullable="false" />
           <Property Name="sms_sent" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="MODULE">
+        <EntityType Name="DEVICE">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="type_id" Type="Int32" Nullable="false" />
-          <Property Name="parent_id" Type="Int32" />
-          <Property Name="cfgradio_id" Type="Int32" />
-          <Property Name="cfgmodule_id" Type="Int32" />
-          <Property Name="cfgdevice_id" Type="Int32" />
-          <Property Name="cfgfolder_id" Type="Int32" />
-          <Property Name="icon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cfg_id" Type="Int32" />
           <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="sync" Type="Int32" />
-          <NavigationProperty Name="ASS_MOD_ACT" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_MODULE1" FromRole="MODULE" ToRole="ASS_MOD_ACT" />
-          <NavigationProperty Name="CFGDEVICE" Relationship="Model1zerzerze.fk_MODULE_CFGDEVICE1" FromRole="MODULE" ToRole="CFGDEVICE" />
-          <NavigationProperty Name="CFGMODULEs" Relationship="Model1zerzerze.fk_CFGMODULE_MODULE1" FromRole="MODULE" ToRole="CFGMODULE" />
-          <NavigationProperty Name="CFGMODULE" Relationship="Model1zerzerze.fk_MODULE_CFGMODULE1" FromRole="MODULE" ToRole="CFGMODULE" />
-          <NavigationProperty Name="CFGRADIOs" Relationship="Model1zerzerze.fk_CFGRADIO_MODULE1" FromRole="MODULE" ToRole="CFGRADIO" />
-          <NavigationProperty Name="CFGRADIO" Relationship="Model1zerzerze.fk_MODULE_CFGRADIO1" FromRole="MODULE" ToRole="CFGRADIO" />
-          <NavigationProperty Name="STATEs" Relationship="Model1zerzerze.MODULESTATE" FromRole="MODULE" ToRole="STATE" />
         </EntityType>
         <EntityType Name="PREFERENCE">
           <Key>
@@ -1261,7 +1013,6 @@
           <Property Name="n_sms" Type="Boolean" Nullable="false" />
           <Property Name="n_mail" Type="Boolean" Nullable="false" />
           <Property Name="sync" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CULTURE" Relationship="Model1zerzerze.fk_PREFERENCE_CULTURE1" FromRole="PREFERENCE" ToRole="CULTURE" />
         </EntityType>
         <EntityType Name="SEQ_NUMBER">
           <Key>
@@ -1302,10 +1053,8 @@
           <Property Name="prefix" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="suffix" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="inc_val" Type="Boolean" Nullable="false" />
-          <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="shared" Type="Boolean" Nullable="false" />
           <Property Name="sync" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.MODULESTATE" FromRole="STATE" ToRole="MODULE" />
         </EntityType>
         <EntityType Name="SYNC">
           <Key>
@@ -1342,15 +1091,6 @@
           <Property Name="LastName" MaxLength="250" FixedLength="false" Unicode="true" Type="String" />
           <Property Name="Gender" MaxLength="250" FixedLength="false" Unicode="true" Type="String" />
         </EntityType>
-        <EntityType Name="TRANSCEIVER_PORT">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="io" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="port_num" Type="Int32" Nullable="false" />
-          <Property Name="port_type" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="USER">
           <Key>
             <PropertyRef Name="id" />
@@ -1366,18 +1106,6 @@
           <Property Name="account_id" Type="String" Nullable="false" />
           <NavigationProperty Name="ACCOUNT" Relationship="Model1zerzerze.ACCOUNTUSER" FromRole="USER" ToRole="ACCOUNT" />
         </EntityType>
-        <Association Name="fk_ASS_MOD_ACT_ACTION1">
-          <End Type="Model1zerzerze.ACTION" Role="ACTION" Multiplicity="1" />
-          <End Type="Model1zerzerze.ASS_MOD_ACT" Role="ASS_MOD_ACT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ACTION">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ASS_MOD_ACT">
-              <PropertyRef Name="action_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_ASS_COD_CUL_CODVAL1">
           <End Type="Model1zerzerze.CODVAL" Role="CODVAL" Multiplicity="1" />
           <End Type="Model1zerzerze.ASS_COD_CUL" Role="ASS_COD_CUL" Multiplicity="*" />
@@ -1411,90 +1139,6 @@
             </Principal>
             <Dependent Role="CULTURE_LIB">
               <PropertyRef Name="asscodcul_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_ASS_MOD_ACT_MODULE1">
-          <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-          <End Type="Model1zerzerze.ASS_MOD_ACT" Role="ASS_MOD_ACT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MODULE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ASS_MOD_ACT">
-              <PropertyRef Name="module_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_MODULE_CFGDEVICE1">
-          <End Type="Model1zerzerze.CFGDEVICE" Role="CFGDEVICE" Multiplicity="0..1" />
-          <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CFGDEVICE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="MODULE">
-              <PropertyRef Name="cfgdevice_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_CFGMODULE_MODULE1">
-          <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-          <End Type="Model1zerzerze.CFGMODULE" Role="CFGMODULE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MODULE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="CFGMODULE">
-              <PropertyRef Name="radio_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_MODULE_CFGMODULE1">
-          <End Type="Model1zerzerze.CFGMODULE" Role="CFGMODULE" Multiplicity="0..1" />
-          <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CFGMODULE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="MODULE">
-              <PropertyRef Name="cfgmodule_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_CFGRADIO_MODULE1">
-          <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-          <End Type="Model1zerzerze.CFGRADIO" Role="CFGRADIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MODULE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="CFGRADIO">
-              <PropertyRef Name="device_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_MODULE_CFGRADIO1">
-          <End Type="Model1zerzerze.CFGRADIO" Role="CFGRADIO" Multiplicity="0..1" />
-          <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CFGRADIO">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="MODULE">
-              <PropertyRef Name="cfgradio_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_PREFERENCE_CULTURE1">
-          <End Type="Model1zerzerze.CULTURE" Role="CULTURE" Multiplicity="1" />
-          <End Type="Model1zerzerze.PREFERENCE" Role="PREFERENCE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CULTURE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="PREFERENCE">
-              <PropertyRef Name="culture_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1618,18 +1262,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="MODULESTATE">
-          <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-          <End Type="Model1zerzerze.STATE" Role="STATE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MODULE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="STATE">
-              <PropertyRef Name="module_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="TRANCIEVER" BaseType="Model1zerzerze.DEVICE">
+          <Property Name="current_analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="digital_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="current_digital_mask" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="device_id" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="io" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="battery_level" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="is_connected" Type="Boolean" Nullable="false" />
+          <Property Name="db" Type="Int32" Nullable="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1730,16 +1374,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ASS_MOD_ACT">
-            <EntityTypeMapping TypeName="Model1zerzerze.ASS_MOD_ACT">
-              <MappingFragment StoreEntitySet="ASS_MOD_ACT">
-                <ScalarProperty Name="sync" ColumnName="sync" />
-                <ScalarProperty Name="action_id" ColumnName="action_id" />
-                <ScalarProperty Name="module_id" ColumnName="module_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ASS_SEQ_TASK">
             <EntityTypeMapping TypeName="Model1zerzerze.ASS_SEQ_TASK">
               <MappingFragment StoreEntitySet="ASS_SEQ_TASK">
@@ -1787,53 +1421,6 @@
                 <ScalarProperty Name="value" ColumnName="value" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CFGDEVICEs">
-            <EntityTypeMapping TypeName="Model1zerzerze.CFGDEVICE">
-              <MappingFragment StoreEntitySet="CFGDEVICE">
-                <ScalarProperty Name="def" ColumnName="def" />
-                <ScalarProperty Name="sync" ColumnName="sync" />
-                <ScalarProperty Name="server_ip" ColumnName="server_ip" />
-                <ScalarProperty Name="updated" ColumnName="updated" />
-                <ScalarProperty Name="registred" ColumnName="registred" />
-                <ScalarProperty Name="serial" ColumnName="serial" />
-                <ScalarProperty Name="icon" ColumnName="icon" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="is_local" ColumnName="is_local" />
-                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
-                <ScalarProperty Name="account_id" ColumnName="account_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CFGMODULEs">
-            <EntityTypeMapping TypeName="Model1zerzerze.CFGMODULE">
-              <MappingFragment StoreEntitySet="CFGMODULE">
-                <ScalarProperty Name="sync" ColumnName="sync" />
-                <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="port_num" ColumnName="port_num" />
-                <ScalarProperty Name="radio_id" ColumnName="radio_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CFGRADIOs">
-            <EntityTypeMapping TypeName="Model1zerzerze.CFGRADIO">
-              <MappingFragment StoreEntitySet="CFGRADIO">
-                <ScalarProperty Name="db" ColumnName="db" />
-                <ScalarProperty Name="is_connected" ColumnName="is_connected" />
-                <ScalarProperty Name="battery_level" ColumnName="battery_level" />
-                <ScalarProperty Name="sync" ColumnName="sync" />
-                <ScalarProperty Name="io" ColumnName="io" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="digital_mask" ColumnName="digital_mask" />
-                <ScalarProperty Name="analog_mask" ColumnName="analog_mask" />
-                <ScalarProperty Name="current_analog_mask" ColumnName="current_analog_mask" />
-                <ScalarProperty Name="current_digital_mask" ColumnName="current_digital_mask" />
-                <ScalarProperty Name="device_id" ColumnName="device_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1954,17 +1541,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DEVICEs">
-            <EntityTypeMapping TypeName="Model1zerzerze.DEVICE">
-              <MappingFragment StoreEntitySet="DEVICE">
-                <ScalarProperty Name="cfg_id" ColumnName="cfg_id" />
-                <ScalarProperty Name="default" ColumnName="default" />
-                <ScalarProperty Name="account_id" ColumnName="account_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="HABILITies">
             <EntityTypeMapping TypeName="Model1zerzerze.HABILITY">
               <MappingFragment StoreEntitySet="HABILITY">
@@ -2004,20 +1580,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MODULEs">
-            <EntityTypeMapping TypeName="Model1zerzerze.MODULE">
+          <EntitySetMapping Name="DEVICEs">
+            <EntityTypeMapping TypeName="IsTypeOf(Model1zerzerze.DEVICE)">
               <MappingFragment StoreEntitySet="MODULE">
-                <ScalarProperty Name="sync" ColumnName="sync" />
-                <ScalarProperty Name="comment" ColumnName="comment" />
-                <ScalarProperty Name="icon" ColumnName="icon" />
-                <ScalarProperty Name="cfgfolder_id" ColumnName="cfgfolder_id" />
-                <ScalarProperty Name="cfgdevice_id" ColumnName="cfgdevice_id" />
-                <ScalarProperty Name="cfgmodule_id" ColumnName="cfgmodule_id" />
-                <ScalarProperty Name="cfgradio_id" ColumnName="cfgradio_id" />
-                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
-                <ScalarProperty Name="type_id" ColumnName="type_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="cfg_id" ColumnName="cfgradio_id" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Model1zerzerze.BOX)">
+              <MappingFragment StoreEntitySet="DEVICE">
+                <ScalarProperty Name="id" ColumnName="id" />
+                
+                <ScalarProperty Name="default" ColumnName="default" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Model1zerzerze.MODULE)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+              <MappingFragment StoreEntitySet="CFGMODULE">
+                <ScalarProperty Name="radio_id" ColumnName="radio_id" />
+                <ScalarProperty Name="port_num" ColumnName="port_num" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2067,7 +1650,6 @@
               <MappingFragment StoreEntitySet="STATE">
                 <ScalarProperty Name="sync" ColumnName="sync" />
                 <ScalarProperty Name="shared" ColumnName="shared" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="inc_val" ColumnName="inc_val" />
                 <ScalarProperty Name="suffix" ColumnName="suffix" />
                 <ScalarProperty Name="prefix" ColumnName="prefix" />
@@ -2113,16 +1695,6 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TRANSCEIVER_PORT">
-            <EntityTypeMapping TypeName="Model1zerzerze.TRANSCEIVER_PORT">
-              <MappingFragment StoreEntitySet="TRANSCEIVER_PORT">
-                <ScalarProperty Name="port_type" ColumnName="port_type" />
-                <ScalarProperty Name="port_num" ColumnName="port_num" />
-                <ScalarProperty Name="io" ColumnName="io" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

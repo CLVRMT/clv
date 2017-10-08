@@ -27,7 +27,5 @@ namespace Angular2MVC.DBContext
         public bool n_sms { get; set; }
         public bool n_mail { get; set; }
         public int sync { get; set; }
-    
-        public virtual CULTURE CULTURE { get; set; }
     }
 }

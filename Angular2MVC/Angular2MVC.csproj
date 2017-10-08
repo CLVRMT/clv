@@ -196,9 +196,6 @@
     <Compile Include="DBContext\ASS_HIS_CYC.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\ASS_MOD_ACT.cs">
-      <DependentUpon>Model1zerzerze.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBContext\ASS_SEQ_TASK.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
@@ -211,13 +208,7 @@
     <Compile Include="DBContext\ASS_USE_PRE.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\CFGDEVICE.cs">
-      <DependentUpon>Model1zerzerze.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\CFGMODULE.cs">
-      <DependentUpon>Model1zerzerze.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\CFGRADIO.cs">
+    <Compile Include="DBContext\BOX.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\CFG_PREFERENCE.cs">
@@ -307,7 +298,7 @@
     <Compile Include="DBContext\TblUser.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\TRANSCEIVER_PORT.cs">
+    <Compile Include="DBContext\TRANCIEVER.cs">
       <DependentUpon>Model1zerzerze.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\USER.cs">

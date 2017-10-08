@@ -14,19 +14,10 @@ namespace Angular2MVC.DBContext
     
     public partial class ACTION
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ACTION()
-        {
-            this.ASS_MOD_ACT = new HashSet<ASS_MOD_ACT>();
-        }
-    
         public int id { get; set; }
         public string type { get; set; }
         public string code { get; set; }
         public Nullable<bool> @default { get; set; }
         public int sync { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ASS_MOD_ACT> ASS_MOD_ACT { get; set; }
     }
 }

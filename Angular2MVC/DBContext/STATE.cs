@@ -24,10 +24,7 @@ namespace Angular2MVC.DBContext
         public string prefix { get; set; }
         public string suffix { get; set; }
         public bool inc_val { get; set; }
-        public int user_id { get; set; }
         public bool shared { get; set; }
         public int sync { get; set; }
-    
-        public virtual MODULE MODULE { get; set; }
     }
 }

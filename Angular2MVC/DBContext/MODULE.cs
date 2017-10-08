@@ -12,39 +12,9 @@ namespace Angular2MVC.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class MODULE
+    public partial class MODULE : DEVICE
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MODULE()
-        {
-            this.ASS_MOD_ACT = new HashSet<ASS_MOD_ACT>();
-            this.CFGMODULEs = new HashSet<CFGMODULE>();
-            this.CFGRADIOs = new HashSet<CFGRADIO>();
-            this.STATEs = new HashSet<STATE>();
-        }
-    
-        public int id { get; set; }
-        public string name { get; set; }
-        public int type_id { get; set; }
-        public Nullable<int> parent_id { get; set; }
-        public Nullable<int> cfgradio_id { get; set; }
-        public Nullable<int> cfgmodule_id { get; set; }
-        public Nullable<int> cfgdevice_id { get; set; }
-        public Nullable<int> cfgfolder_id { get; set; }
-        public string icon { get; set; }
-        public string comment { get; set; }
-        public Nullable<int> sync { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ASS_MOD_ACT> ASS_MOD_ACT { get; set; }
-        public virtual CFGDEVICE CFGDEVICE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CFGMODULE> CFGMODULEs { get; set; }
-        public virtual CFGMODULE CFGMODULE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CFGRADIO> CFGRADIOs { get; set; }
-        public virtual CFGRADIO CFGRADIO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<STATE> STATEs { get; set; }
+        public int radio_id { get; set; }
+        public int port_num { get; set; }
     }
 }

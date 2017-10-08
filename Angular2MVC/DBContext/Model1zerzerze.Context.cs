@@ -34,15 +34,11 @@ namespace Angular2MVC.DBContext
         public virtual DbSet<ASS_CYC_SEQ> ASS_CYC_SEQ { get; set; }
         public virtual DbSet<ASS_CYCLE_DESIGNPART> ASS_CYCLE_DESIGNPART { get; set; }
         public virtual DbSet<ASS_HIS_CYC> ASS_HIS_CYC { get; set; }
-        public virtual DbSet<ASS_MOD_ACT> ASS_MOD_ACT { get; set; }
         public virtual DbSet<ASS_SEQ_TASK> ASS_SEQ_TASK { get; set; }
         public virtual DbSet<ASS_USE_ACC> ASS_USE_ACC { get; set; }
         public virtual DbSet<ASS_USE_ALERT> ASS_USE_ALERT { get; set; }
         public virtual DbSet<ASS_USE_PRE> ASS_USE_PRE { get; set; }
         public virtual DbSet<CFG_PREFERENCE> CFG_PREFERENCE { get; set; }
-        public virtual DbSet<CFGDEVICE> CFGDEVICEs { get; set; }
-        public virtual DbSet<CFGMODULE> CFGMODULEs { get; set; }
-        public virtual DbSet<CFGRADIO> CFGRADIOs { get; set; }
         public virtual DbSet<CODVAL> CODVALs { get; set; }
         public virtual DbSet<CONDITION> CONDITIONs { get; set; }
         public virtual DbSet<CONDITION_PART> CONDITION_PART { get; set; }
@@ -54,11 +50,10 @@ namespace Angular2MVC.DBContext
         public virtual DbSet<CYCLE> CYCLEs { get; set; }
         public virtual DbSet<DESIGN> DESIGNs { get; set; }
         public virtual DbSet<DESIGN_PART> DESIGN_PART { get; set; }
-        public virtual DbSet<DEVICE> DEVICEs { get; set; }
         public virtual DbSet<HABILITY> HABILITies { get; set; }
         public virtual DbSet<HISTORY> HISTORies { get; set; }
         public virtual DbSet<HISTORY_ALERT> HISTORY_ALERT { get; set; }
-        public virtual DbSet<MODULE> MODULEs { get; set; }
+        public virtual DbSet<DEVICE> DEVICEs { get; set; }
         public virtual DbSet<PREFERENCE> PREFERENCEs { get; set; }
         public virtual DbSet<SEQ_NUMBER> SEQ_NUMBER { get; set; }
         public virtual DbSet<SEQUENCE> SEQUENCEs { get; set; }
@@ -66,7 +61,6 @@ namespace Angular2MVC.DBContext
         public virtual DbSet<SYNC> SYNCs { get; set; }
         public virtual DbSet<TASK> TASKs { get; set; }
         public virtual DbSet<TblUser> TblUsers { get; set; }
-        public virtual DbSet<TRANSCEIVER_PORT> TRANSCEIVER_PORT { get; set; }
         public virtual DbSet<USER> USERs { get; set; }
     }
 }

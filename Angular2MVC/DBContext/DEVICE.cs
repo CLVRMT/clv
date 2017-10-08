@@ -14,10 +14,10 @@ namespace Angular2MVC.DBContext
     
     public partial class DEVICE
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
-        public string account_id { get; set; }
-        public Nullable<bool> @default { get; set; }
-        public string cfg_id { get; set; }
+        public int type_id { get; set; }
+        public Nullable<int> cfg_id { get; set; }
+        public string comment { get; set; }
     }
 }
