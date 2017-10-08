@@ -1,8 +1,0 @@
-﻿CREATE TABLE [dbo].[CFG_PREFERENCE] (
-    [id]      INT           IDENTITY (1, 1) NOT NULL,
-    [user_id] VARCHAR (100) NOT NULL,
-    [name]    VARCHAR (255) NOT NULL,
-    [value]   VARCHAR (255) NOT NULL,
-    CONSTRAINT [PK_CFG_PREFERENCE] PRIMARY KEY CLUSTERED ([id] ASC)
-);
-

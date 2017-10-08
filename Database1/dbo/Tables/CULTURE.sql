@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[CULTURE] (
-    [id]   INT          IDENTITY (1, 1) NOT NULL,
-    [name] VARCHAR (20) NOT NULL,
-    CONSTRAINT [PK_CULTURE] PRIMARY KEY CLUSTERED ([id] ASC)
-);
-

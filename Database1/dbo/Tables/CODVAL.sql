@@ -1,7 +1,0 @@
-﻿CREATE TABLE [dbo].[CODVAL] (
-    [id]  INT          IDENTITY (1, 1) NOT NULL,
-    [cod] VARCHAR (20) NOT NULL,
-    [val] VARCHAR (20) NOT NULL,
-    CONSTRAINT [PK_CODVAL] PRIMARY KEY CLUSTERED ([id] ASC)
-);
-

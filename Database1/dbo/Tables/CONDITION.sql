@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[CONDITION] (
-    [id]      INT           IDENTITY (1, 1) NOT NULL,
-    [pattern] VARCHAR (255) NULL,
-    CONSTRAINT [PK_CONDITION] PRIMARY KEY CLUSTERED ([id] ASC)
-);
-

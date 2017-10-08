@@ -10,18 +10,11 @@
     <EntitySet Name="ASS_CYC_SEQ" EntityType="Model1zerzerze.ASS_CYC_SEQ" />
     <EntitySet Name="ASS_CYCLE_DESIGNPART" EntityType="Model1zerzerze.ASS_CYCLE_DESIGNPART" />
     <EntitySet Name="ASS_HIS_CYC" EntityType="Model1zerzerze.ASS_HIS_CYC" />
-    <EntitySet Name="ASS_MOD_ACT" EntityType="Model1zerzerze.ASS_MOD_ACT" />
-    <EntitySet Name="ASS_MOD_HAB" EntityType="Model1zerzerze.ASS_MOD_HAB" />
-    <EntitySet Name="ASS_MOD_STA" EntityType="Model1zerzerze.ASS_MOD_STA" />
     <EntitySet Name="ASS_SEQ_TASK" EntityType="Model1zerzerze.ASS_SEQ_TASK" />
     <EntitySet Name="ASS_USE_ACC" EntityType="Model1zerzerze.ASS_USE_ACC" />
     <EntitySet Name="ASS_USE_ALERT" EntityType="Model1zerzerze.ASS_USE_ALERT" />
-    <EntitySet Name="ASS_USE_HAB" EntityType="Model1zerzerze.ASS_USE_HAB" />
     <EntitySet Name="ASS_USE_PRE" EntityType="Model1zerzerze.ASS_USE_PRE" />
     <EntitySet Name="CFG_PREFERENCE" EntityType="Model1zerzerze.CFG_PREFERENCE" />
-    <EntitySet Name="CFGDEVICEs" EntityType="Model1zerzerze.CFGDEVICE" />
-    <EntitySet Name="CFGMODULEs" EntityType="Model1zerzerze.CFGMODULE" />
-    <EntitySet Name="CFGRADIOs" EntityType="Model1zerzerze.CFGRADIO" />
     <EntitySet Name="CODVALs" EntityType="Model1zerzerze.CODVAL" />
     <EntitySet Name="CONDITIONs" EntityType="Model1zerzerze.CONDITION" />
     <EntitySet Name="CONDITION_PART" EntityType="Model1zerzerze.CONDITION_PART" />
@@ -33,11 +26,10 @@
     <EntitySet Name="CYCLEs" EntityType="Model1zerzerze.CYCLE" />
     <EntitySet Name="DESIGNs" EntityType="Model1zerzerze.DESIGN" />
     <EntitySet Name="DESIGN_PART" EntityType="Model1zerzerze.DESIGN_PART" />
-    <EntitySet Name="DEVICEs" EntityType="Model1zerzerze.DEVICE" />
     <EntitySet Name="HABILITies" EntityType="Model1zerzerze.HABILITY" />
     <EntitySet Name="HISTORies" EntityType="Model1zerzerze.HISTORY" />
     <EntitySet Name="HISTORY_ALERT" EntityType="Model1zerzerze.HISTORY_ALERT" />
-    <EntitySet Name="MODULEs" EntityType="Model1zerzerze.MODULE" />
+    <EntitySet Name="DEVICEs" EntityType="Model1zerzerze.DEVICE" />
     <EntitySet Name="PREFERENCEs" EntityType="Model1zerzerze.PREFERENCE" />
     <EntitySet Name="SEQ_NUMBER" EntityType="Model1zerzerze.SEQ_NUMBER" />
     <EntitySet Name="SEQUENCEs" EntityType="Model1zerzerze.SEQUENCE" />
@@ -45,12 +37,7 @@
     <EntitySet Name="SYNCs" EntityType="Model1zerzerze.SYNC" />
     <EntitySet Name="TASKs" EntityType="Model1zerzerze.TASK" />
     <EntitySet Name="TblUsers" EntityType="Model1zerzerze.TblUser" />
-    <EntitySet Name="TRANSCEIVER_PORT" EntityType="Model1zerzerze.TRANSCEIVER_PORT" />
     <EntitySet Name="USERs" EntityType="Model1zerzerze.USER" />
-    <AssociationSet Name="fk_ASS_MOD_ACT_ACTION1" Association="Model1zerzerze.fk_ASS_MOD_ACT_ACTION1">
-      <End Role="ACTION" EntitySet="ACTIONs" />
-      <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
-    </AssociationSet>
     <AssociationSet Name="fk_ASS_COD_CUL_CODVAL1" Association="Model1zerzerze.fk_ASS_COD_CUL_CODVAL1">
       <End Role="CODVAL" EntitySet="CODVALs" />
       <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
@@ -63,50 +50,6 @@
       <End Role="ASS_COD_CUL" EntitySet="ASS_COD_CUL" />
       <End Role="CULTURE_LIB" EntitySet="CULTURE_LIB" />
     </AssociationSet>
-    <AssociationSet Name="fk_ASS_MOD_ACT_MODULE1" Association="Model1zerzerze.fk_ASS_MOD_ACT_MODULE1">
-      <End Role="MODULE" EntitySet="MODULEs" />
-      <End Role="ASS_MOD_ACT" EntitySet="ASS_MOD_ACT" />
-    </AssociationSet>
-    <AssociationSet Name="fk_ASS_MOD_HAB_HABILITY1" Association="Model1zerzerze.fk_ASS_MOD_HAB_HABILITY1">
-      <End Role="HABILITY" EntitySet="HABILITies" />
-      <End Role="ASS_MOD_HAB" EntitySet="ASS_MOD_HAB" />
-    </AssociationSet>
-    <AssociationSet Name="fk_ASS_MOD_HAB_MODULE1" Association="Model1zerzerze.fk_ASS_MOD_HAB_MODULE1">
-      <End Role="MODULE" EntitySet="MODULEs" />
-      <End Role="ASS_MOD_HAB" EntitySet="ASS_MOD_HAB" />
-    </AssociationSet>
-    <AssociationSet Name="fk_ASS_MOD_STA_MODULE1" Association="Model1zerzerze.fk_ASS_MOD_STA_MODULE1">
-      <End Role="MODULE" EntitySet="MODULEs" />
-      <End Role="ASS_MOD_STA" EntitySet="ASS_MOD_STA" />
-    </AssociationSet>
-    <AssociationSet Name="fk_ASS_MOD_STA_STATE1" Association="Model1zerzerze.fk_ASS_MOD_STA_STATE1">
-      <End Role="STATE" EntitySet="STATEs" />
-      <End Role="ASS_MOD_STA" EntitySet="ASS_MOD_STA" />
-    </AssociationSet>
-    <AssociationSet Name="fk_MODULE_CFGDEVICE1" Association="Model1zerzerze.fk_MODULE_CFGDEVICE1">
-      <End Role="CFGDEVICE" EntitySet="CFGDEVICEs" />
-      <End Role="MODULE" EntitySet="MODULEs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_CFGMODULE_MODULE1" Association="Model1zerzerze.fk_CFGMODULE_MODULE1">
-      <End Role="MODULE" EntitySet="MODULEs" />
-      <End Role="CFGMODULE" EntitySet="CFGMODULEs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_MODULE_CFGMODULE1" Association="Model1zerzerze.fk_MODULE_CFGMODULE1">
-      <End Role="CFGMODULE" EntitySet="CFGMODULEs" />
-      <End Role="MODULE" EntitySet="MODULEs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_CFGRADIO_MODULE1" Association="Model1zerzerze.fk_CFGRADIO_MODULE1">
-      <End Role="MODULE" EntitySet="MODULEs" />
-      <End Role="CFGRADIO" EntitySet="CFGRADIOs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_MODULE_CFGRADIO1" Association="Model1zerzerze.fk_MODULE_CFGRADIO1">
-      <End Role="CFGRADIO" EntitySet="CFGRADIOs" />
-      <End Role="MODULE" EntitySet="MODULEs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_PREFERENCE_CULTURE1" Association="Model1zerzerze.fk_PREFERENCE_CULTURE1">
-      <End Role="CULTURE" EntitySet="CULTUREs" />
-      <End Role="PREFERENCE" EntitySet="PREFERENCEs" />
-    </AssociationSet>
     <AssociationSet Name="FK_DESIGN_PART_DESIGN" Association="Model1zerzerze.FK_DESIGN_PART_DESIGN">
       <End Role="DESIGN" EntitySet="DESIGNs" />
       <End Role="DESIGN_PART" EntitySet="DESIGN_PART" />
@@ -114,6 +57,38 @@
     <AssociationSet Name="FK_fki" Association="Model1zerzerze.FK_fki">
       <End Role="DESIGN" EntitySet="DESIGNs" />
       <End Role="DESIGN1" EntitySet="DESIGNs" />
+    </AssociationSet>
+    <AssociationSet Name="CYCLESEQUENCE" Association="Model1zerzerze.CYCLESEQUENCE">
+      <End Role="CYCLE" EntitySet="CYCLEs" />
+      <End Role="SEQUENCE" EntitySet="SEQUENCEs" />
+    </AssociationSet>
+    <AssociationSet Name="SEQUENCETASK" Association="Model1zerzerze.SEQUENCETASK">
+      <End Role="SEQUENCE" EntitySet="SEQUENCEs" />
+      <End Role="TASK" EntitySet="TASKs" />
+    </AssociationSet>
+    <AssociationSet Name="DESIGNCYCLE" Association="Model1zerzerze.DESIGNCYCLE">
+      <End Role="DESIGN" EntitySet="DESIGNs" />
+      <End Role="CYCLE" EntitySet="CYCLEs" />
+    </AssociationSet>
+    <AssociationSet Name="CONDITIONALERT_CFG" Association="Model1zerzerze.CONDITIONALERT_CFG">
+      <End Role="CONDITION" EntitySet="CONDITIONs" />
+      <End Role="ALERT_CFG" EntitySet="ALERT_CFG" />
+    </AssociationSet>
+    <AssociationSet Name="TASKCONDITION" Association="Model1zerzerze.TASKCONDITION">
+      <End Role="TASK" EntitySet="TASKs" />
+      <End Role="CONDITION" EntitySet="CONDITIONs" />
+    </AssociationSet>
+    <AssociationSet Name="CYCLECONDITION" Association="Model1zerzerze.CYCLECONDITION">
+      <End Role="CYCLE" EntitySet="CYCLEs" />
+      <End Role="CONDITION" EntitySet="CONDITIONs" />
+    </AssociationSet>
+    <AssociationSet Name="SEQUENCESEQUENCE" Association="Model1zerzerze.SEQUENCESEQUENCE">
+      <End Role="SEQUENCE" EntitySet="SEQUENCEs" />
+      <End Role="SEQUENCE1" EntitySet="SEQUENCEs" />
+    </AssociationSet>
+    <AssociationSet Name="ACCOUNTUSER" Association="Model1zerzerze.ACCOUNTUSER">
+      <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
+      <End Role="USER" EntitySet="USERs" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="ACCOUNT">
@@ -125,6 +100,7 @@
     <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="enabled" Type="Boolean" />
     <Property Name="sync" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="USERs" Relationship="Model1zerzerze.ACCOUNTUSER" FromRole="ACCOUNT" ToRole="USER" />
   </EntityType>
   <EntityType Name="ACTION">
     <Key>
@@ -135,7 +111,6 @@
     <Property Name="code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="default" Type="Boolean" />
     <Property Name="sync" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ASS_MOD_ACT" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_ACTION1" FromRole="ACTION" ToRole="ASS_MOD_ACT" />
   </EntityType>
   <EntityType Name="ALERT">
     <Key>
@@ -151,15 +126,15 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="String" Nullable="false" />
     <Property Name="module_id" Type="Int32" />
     <Property Name="message" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
     <Property Name="type" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-    <Property Name="condition_id" Type="Int32" />
     <Property Name="user_id" Type="Int32" />
     <Property Name="shared" Type="Boolean" />
     <Property Name="sms" Type="Boolean" />
     <Property Name="email" Type="Boolean" />
+    <NavigationProperty Name="CONDITION" Relationship="Model1zerzerze.CONDITIONALERT_CFG" FromRole="ALERT_CFG" ToRole="CONDITION" />
   </EntityType>
   <EntityType Name="ASS_COD_CUL">
     <Key>
@@ -204,39 +179,6 @@
     <Property Name="cycle_id" Type="Int32" Nullable="false" />
     <Property Name="history_id" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="ASS_MOD_ACT">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="module_id" Type="Int32" Nullable="false" />
-    <Property Name="action_id" Type="Int32" Nullable="false" />
-    <Property Name="sync" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ACTION" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_ACTION1" FromRole="ASS_MOD_ACT" ToRole="ACTION" />
-    <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_MODULE1" FromRole="ASS_MOD_ACT" ToRole="MODULE" />
-  </EntityType>
-  <EntityType Name="ASS_MOD_HAB">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="module_id" Type="Int32" Nullable="false" />
-    <Property Name="hability_id" Type="Int32" Nullable="false" />
-    <Property Name="sync" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="HABILITY" Relationship="Model1zerzerze.fk_ASS_MOD_HAB_HABILITY1" FromRole="ASS_MOD_HAB" ToRole="HABILITY" />
-    <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_ASS_MOD_HAB_MODULE1" FromRole="ASS_MOD_HAB" ToRole="MODULE" />
-  </EntityType>
-  <EntityType Name="ASS_MOD_STA">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="module_id" Type="Int32" Nullable="false" />
-    <Property Name="state_id" Type="Int32" Nullable="false" />
-    <Property Name="sync" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_ASS_MOD_STA_MODULE1" FromRole="ASS_MOD_STA" ToRole="MODULE" />
-    <NavigationProperty Name="STATE" Relationship="Model1zerzerze.fk_ASS_MOD_STA_STATE1" FromRole="ASS_MOD_STA" ToRole="STATE" />
-  </EntityType>
   <EntityType Name="ASS_SEQ_TASK">
     <Key>
       <PropertyRef Name="id" />
@@ -265,15 +207,6 @@
     <Property Name="deleted" Type="Boolean" Nullable="false" />
     <Property Name="sync" Type="Boolean" Nullable="false" />
   </EntityType>
-  <EntityType Name="ASS_USE_HAB">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="user_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="hability_id" Type="Int32" Nullable="false" />
-    <Property Name="sync" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityType Name="ASS_USE_PRE">
     <Key>
       <PropertyRef Name="id" />
@@ -292,54 +225,9 @@
     <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="value" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="CFGDEVICE">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="account_id" Type="Int32" Nullable="false" />
-    <Property Name="ip_address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="is_local" Type="Boolean" Nullable="false" />
-    <Property Name="state" Type="Boolean" Nullable="false" />
-    <Property Name="icon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="serial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="registred" Type="Boolean" Nullable="false" />
-    <Property Name="updated" Type="Boolean" Nullable="false" />
-    <Property Name="server_ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="sync" Type="Int32" Nullable="false" />
-    <Property Name="def" Type="Boolean" />
-    <NavigationProperty Name="MODULEs" Relationship="Model1zerzerze.fk_MODULE_CFGDEVICE1" FromRole="CFGDEVICE" ToRole="MODULE" />
-  </EntityType>
-  <EntityType Name="CFGMODULE">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  <EntityType Name="MODULE" BaseType="Model1zerzerze.DEVICE">
     <Property Name="radio_id" Type="Int32" Nullable="false" />
     <Property Name="port_num" Type="Int32" Nullable="false" />
-    <Property Name="color" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="sync" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_CFGMODULE_MODULE1" FromRole="CFGMODULE" ToRole="MODULE" />
-    <NavigationProperty Name="MODULEs" Relationship="Model1zerzerze.fk_MODULE_CFGMODULE1" FromRole="CFGMODULE" ToRole="MODULE" />
-  </EntityType>
-  <EntityType Name="CFGRADIO">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="device_id" Type="Int32" Nullable="false" />
-    <Property Name="current_digital_mask" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
-    <Property Name="current_analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="digital_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="address" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
-    <Property Name="io" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
-    <Property Name="sync" Type="Int32" Nullable="false" />
-    <Property Name="battery_level" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="is_connected" Type="Boolean" Nullable="false" />
-    <Property Name="db" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="MODULE" Relationship="Model1zerzerze.fk_CFGRADIO_MODULE1" FromRole="CFGRADIO" ToRole="MODULE" />
-    <NavigationProperty Name="MODULEs" Relationship="Model1zerzerze.fk_MODULE_CFGRADIO1" FromRole="CFGRADIO" ToRole="MODULE" />
   </EntityType>
   <EntityType Name="CODVAL">
     <Key>
@@ -354,8 +242,12 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="pattern" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ALERT_CFG" Relationship="Model1zerzerze.CONDITIONALERT_CFG" FromRole="CONDITION" ToRole="ALERT_CFG" />
+    <NavigationProperty Name="TASK" Relationship="Model1zerzerze.TASKCONDITION" FromRole="CONDITION" ToRole="TASK" />
+    <Property Name="alert_cfg_id" Type="String" Nullable="true" />
+    <NavigationProperty Name="CYCLE" Relationship="Model1zerzerze.CYCLECONDITION" FromRole="CONDITION" ToRole="CYCLE" />
   </EntityType>
   <EntityType Name="CONDITION_PART">
     <Key>
@@ -401,7 +293,6 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ASS_COD_CUL" Relationship="Model1zerzerze.fk_ASS_COD_CUL_CULTURE1" FromRole="CULTURE" ToRole="ASS_COD_CUL" />
-    <NavigationProperty Name="PREFERENCEs" Relationship="Model1zerzerze.fk_PREFERENCE_CULTURE1" FromRole="CULTURE" ToRole="PREFERENCE" />
   </EntityType>
   <EntityType Name="CULTURE_LIB">
     <Key>
@@ -418,10 +309,14 @@
     </Key>
     <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="condition_id" Type="Int32" />
+    <Property Name="condition_id" Type="String" />
     <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="value" Type="Int32" />
     <Property Name="device_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SEQUENCEs" Relationship="Model1zerzerze.CYCLESEQUENCE" FromRole="CYCLE" ToRole="SEQUENCE" />
+    <Property Name="design_id" Type="String" Nullable="true" />
+    <NavigationProperty Name="DESIGN" Relationship="Model1zerzerze.DESIGNCYCLE" FromRole="CYCLE" ToRole="DESIGN" />
+    <NavigationProperty Name="CONDITIONs" Relationship="Model1zerzerze.CYCLECONDITION" FromRole="CYCLE" ToRole="CONDITION" />
   </EntityType>
   <EntityType Name="DESIGN">
     <Key>
@@ -440,6 +335,7 @@
     <NavigationProperty Name="DESIGN_PART" Relationship="Model1zerzerze.FK_DESIGN_PART_DESIGN" FromRole="DESIGN" ToRole="DESIGN_PART" />
     <NavigationProperty Name="DESIGN1" Relationship="Model1zerzerze.FK_fki" FromRole="DESIGN" ToRole="DESIGN1" />
     <NavigationProperty Name="DESIGN2" Relationship="Model1zerzerze.FK_fki" FromRole="DESIGN1" ToRole="DESIGN" />
+    <NavigationProperty Name="CYCLEs" Relationship="Model1zerzerze.DESIGNCYCLE" FromRole="DESIGN" ToRole="CYCLE" />
   </EntityType>
   <EntityType Name="DESIGN_PART">
     <Key>
@@ -454,15 +350,16 @@
     <Property Name="parent" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DESIGN" Relationship="Model1zerzerze.FK_DESIGN_PART_DESIGN" FromRole="DESIGN_PART" ToRole="DESIGN" />
   </EntityType>
-  <EntityType Name="DEVICE">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="account_id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+  <EntityType Name="BOX" BaseType="Model1zerzerze.DEVICE">
     <Property Name="default" Type="Boolean" />
-    <Property Name="cfg_id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="account_id" Type="Int32" Nullable="false" />
+    <Property Name="ip_address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_local" Type="Boolean" Nullable="false" />
+    <Property Name="state" Type="Boolean" Nullable="false" />
+    <Property Name="serial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="registred" Type="Boolean" Nullable="false" />
+    <Property Name="updated" Type="Boolean" Nullable="false" />
+    <Property Name="server_ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="HABILITY">
     <Key>
@@ -474,7 +371,6 @@
     <Property Name="can_upd" Type="Boolean" Nullable="false" />
     <Property Name="can_add" Type="Boolean" Nullable="false" />
     <Property Name="can_del" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="ASS_MOD_HAB" Relationship="Model1zerzerze.fk_ASS_MOD_HAB_HABILITY1" FromRole="HABILITY" ToRole="ASS_MOD_HAB" />
   </EntityType>
   <EntityType Name="HISTORY">
     <Key>
@@ -502,29 +398,15 @@
     <Property Name="seen" Type="Boolean" Nullable="false" />
     <Property Name="sms_sent" Type="Boolean" Nullable="false" />
   </EntityType>
-  <EntityType Name="MODULE">
+  <EntityType Name="DEVICE">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="type_id" Type="Int32" Nullable="false" />
-    <Property Name="parent_id" Type="Int32" />
-    <Property Name="cfgradio_id" Type="Int32" />
-    <Property Name="cfgmodule_id" Type="Int32" />
-    <Property Name="cfgdevice_id" Type="Int32" />
-    <Property Name="cfgfolder_id" Type="Int32" />
-    <Property Name="icon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cfg_id" Type="Int32" />
     <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="sync" Type="Int32" />
-    <NavigationProperty Name="ASS_MOD_ACT" Relationship="Model1zerzerze.fk_ASS_MOD_ACT_MODULE1" FromRole="MODULE" ToRole="ASS_MOD_ACT" />
-    <NavigationProperty Name="ASS_MOD_HAB" Relationship="Model1zerzerze.fk_ASS_MOD_HAB_MODULE1" FromRole="MODULE" ToRole="ASS_MOD_HAB" />
-    <NavigationProperty Name="ASS_MOD_STA" Relationship="Model1zerzerze.fk_ASS_MOD_STA_MODULE1" FromRole="MODULE" ToRole="ASS_MOD_STA" />
-    <NavigationProperty Name="CFGDEVICE" Relationship="Model1zerzerze.fk_MODULE_CFGDEVICE1" FromRole="MODULE" ToRole="CFGDEVICE" />
-    <NavigationProperty Name="CFGMODULEs" Relationship="Model1zerzerze.fk_CFGMODULE_MODULE1" FromRole="MODULE" ToRole="CFGMODULE" />
-    <NavigationProperty Name="CFGMODULE" Relationship="Model1zerzerze.fk_MODULE_CFGMODULE1" FromRole="MODULE" ToRole="CFGMODULE" />
-    <NavigationProperty Name="CFGRADIOs" Relationship="Model1zerzerze.fk_CFGRADIO_MODULE1" FromRole="MODULE" ToRole="CFGRADIO" />
-    <NavigationProperty Name="CFGRADIO" Relationship="Model1zerzerze.fk_MODULE_CFGRADIO1" FromRole="MODULE" ToRole="CFGRADIO" />
   </EntityType>
   <EntityType Name="PREFERENCE">
     <Key>
@@ -543,7 +425,6 @@
     <Property Name="n_sms" Type="Boolean" Nullable="false" />
     <Property Name="n_mail" Type="Boolean" Nullable="false" />
     <Property Name="sync" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="CULTURE" Relationship="Model1zerzerze.fk_PREFERENCE_CULTURE1" FromRole="PREFERENCE" ToRole="CULTURE" />
   </EntityType>
   <EntityType Name="SEQ_NUMBER">
     <Key>
@@ -560,10 +441,15 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="type" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
     <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="steady_sequence_id" Type="Int32" />
+    <Property Name="steady_sequence_id" Type="String" />
+    <Property Name="cycle_id" Type="String" Nullable="false" />
+    <NavigationProperty Name="CYCLE" Relationship="Model1zerzerze.CYCLESEQUENCE" FromRole="SEQUENCE" ToRole="CYCLE" />
+    <NavigationProperty Name="TASKs" Relationship="Model1zerzerze.SEQUENCETASK" FromRole="SEQUENCE" ToRole="TASK" />
+    <NavigationProperty Name="SEQUENCEs" Relationship="Model1zerzerze.SEQUENCESEQUENCE" FromRole="SEQUENCE" ToRole="SEQUENCE1" />
+    <NavigationProperty Name="SEQUENCE1" Relationship="Model1zerzerze.SEQUENCESEQUENCE" FromRole="SEQUENCE1" ToRole="SEQUENCE" />
   </EntityType>
   <EntityType Name="STATE">
     <Key>
@@ -579,10 +465,8 @@
     <Property Name="prefix" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="suffix" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="inc_val" Type="Boolean" Nullable="false" />
-    <Property Name="user_id" Type="Int32" Nullable="false" />
     <Property Name="shared" Type="Boolean" Nullable="false" />
     <Property Name="sync" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ASS_MOD_STA" Relationship="Model1zerzerze.fk_ASS_MOD_STA_STATE1" FromRole="STATE" ToRole="ASS_MOD_STA" />
   </EntityType>
   <EntityType Name="SYNC">
     <Key>
@@ -605,7 +489,10 @@
     <Property Name="module_id" Type="Int32" Nullable="false" />
     <Property Name="action_id" Type="Int32" Nullable="false" />
     <Property Name="duration" Type="Int32" />
-    <Property Name="condition_id" Type="Int32" />
+    <Property Name="condition_id" Type="String" Nullable="true" />
+    <Property Name="sequence_id" Type="String" Nullable="false" />
+    <NavigationProperty Name="SEQUENCE" Relationship="Model1zerzerze.SEQUENCETASK" FromRole="TASK" ToRole="SEQUENCE" />
+    <NavigationProperty Name="CONDITIONs" Relationship="Model1zerzerze.TASKCONDITION" FromRole="TASK" ToRole="CONDITION" />
   </EntityType>
   <EntityType Name="TblUser">
     <Key>
@@ -616,21 +503,11 @@
     <Property Name="LastName" MaxLength="250" FixedLength="false" Unicode="true" Type="String" />
     <Property Name="Gender" MaxLength="250" FixedLength="false" Unicode="true" Type="String" />
   </EntityType>
-  <EntityType Name="TRANSCEIVER_PORT">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="io" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="port_num" Type="Int32" Nullable="false" />
-    <Property Name="port_type" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="USER">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="user1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="email" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="phone" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
@@ -638,19 +515,9 @@
     <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="sync" Type="Int32" Nullable="false" />
+    <Property Name="account_id" Type="String" Nullable="false" />
+    <NavigationProperty Name="ACCOUNT" Relationship="Model1zerzerze.ACCOUNTUSER" FromRole="USER" ToRole="ACCOUNT" />
   </EntityType>
-  <Association Name="fk_ASS_MOD_ACT_ACTION1">
-    <End Type="Model1zerzerze.ACTION" Role="ACTION" Multiplicity="1" />
-    <End Type="Model1zerzerze.ASS_MOD_ACT" Role="ASS_MOD_ACT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ACTION">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ASS_MOD_ACT">
-        <PropertyRef Name="action_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_ASS_COD_CUL_CODVAL1">
     <End Type="Model1zerzerze.CODVAL" Role="CODVAL" Multiplicity="1" />
     <End Type="Model1zerzerze.ASS_COD_CUL" Role="ASS_COD_CUL" Multiplicity="*" />
@@ -687,138 +554,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_ASS_MOD_ACT_MODULE1">
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-    <End Type="Model1zerzerze.ASS_MOD_ACT" Role="ASS_MOD_ACT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MODULE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ASS_MOD_ACT">
-        <PropertyRef Name="module_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_ASS_MOD_HAB_HABILITY1">
-    <End Type="Model1zerzerze.HABILITY" Role="HABILITY" Multiplicity="1" />
-    <End Type="Model1zerzerze.ASS_MOD_HAB" Role="ASS_MOD_HAB" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HABILITY">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ASS_MOD_HAB">
-        <PropertyRef Name="hability_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_ASS_MOD_HAB_MODULE1">
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-    <End Type="Model1zerzerze.ASS_MOD_HAB" Role="ASS_MOD_HAB" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MODULE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ASS_MOD_HAB">
-        <PropertyRef Name="module_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_ASS_MOD_STA_MODULE1">
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-    <End Type="Model1zerzerze.ASS_MOD_STA" Role="ASS_MOD_STA" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MODULE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ASS_MOD_STA">
-        <PropertyRef Name="module_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_ASS_MOD_STA_STATE1">
-    <End Type="Model1zerzerze.STATE" Role="STATE" Multiplicity="1" />
-    <End Type="Model1zerzerze.ASS_MOD_STA" Role="ASS_MOD_STA" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="STATE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ASS_MOD_STA">
-        <PropertyRef Name="state_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_MODULE_CFGDEVICE1">
-    <End Type="Model1zerzerze.CFGDEVICE" Role="CFGDEVICE" Multiplicity="0..1" />
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CFGDEVICE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="MODULE">
-        <PropertyRef Name="cfgdevice_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_CFGMODULE_MODULE1">
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-    <End Type="Model1zerzerze.CFGMODULE" Role="CFGMODULE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MODULE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="CFGMODULE">
-        <PropertyRef Name="radio_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_MODULE_CFGMODULE1">
-    <End Type="Model1zerzerze.CFGMODULE" Role="CFGMODULE" Multiplicity="0..1" />
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CFGMODULE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="MODULE">
-        <PropertyRef Name="cfgmodule_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_CFGRADIO_MODULE1">
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="1" />
-    <End Type="Model1zerzerze.CFGRADIO" Role="CFGRADIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MODULE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="CFGRADIO">
-        <PropertyRef Name="device_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_MODULE_CFGRADIO1">
-    <End Type="Model1zerzerze.CFGRADIO" Role="CFGRADIO" Multiplicity="0..1" />
-    <End Type="Model1zerzerze.MODULE" Role="MODULE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CFGRADIO">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="MODULE">
-        <PropertyRef Name="cfgradio_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_PREFERENCE_CULTURE1">
-    <End Type="Model1zerzerze.CULTURE" Role="CULTURE" Multiplicity="1" />
-    <End Type="Model1zerzerze.PREFERENCE" Role="PREFERENCE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CULTURE">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="PREFERENCE">
-        <PropertyRef Name="culture_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DESIGN_PART_DESIGN">
     <End Type="Model1zerzerze.DESIGN" Role="DESIGN" Multiplicity="0..1" />
     <End Type="Model1zerzerze.DESIGN_PART" Role="DESIGN_PART" Multiplicity="*" />
@@ -843,4 +578,112 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="CYCLESEQUENCE">
+    <End Type="Model1zerzerze.CYCLE" Role="CYCLE" Multiplicity="1" />
+    <End Type="Model1zerzerze.SEQUENCE" Role="SEQUENCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CYCLE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SEQUENCE">
+        <PropertyRef Name="cycle_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEQUENCETASK">
+    <End Type="Model1zerzerze.SEQUENCE" Role="SEQUENCE" Multiplicity="1" />
+    <End Type="Model1zerzerze.TASK" Role="TASK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEQUENCE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TASK">
+        <PropertyRef Name="sequence_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DESIGNCYCLE">
+    <End Type="Model1zerzerze.DESIGN" Role="DESIGN" Multiplicity="0..1" />
+    <End Type="Model1zerzerze.CYCLE" Role="CYCLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DESIGN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CYCLE">
+        <PropertyRef Name="design_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CONDITIONALERT_CFG">
+    <End Type="Model1zerzerze.CONDITION" Role="CONDITION" Multiplicity="*" />
+    <End Type="Model1zerzerze.ALERT_CFG" Role="ALERT_CFG" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ALERT_CFG">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CONDITION">
+        <PropertyRef Name="alert_cfg_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TASKCONDITION">
+    <End Type="Model1zerzerze.TASK" Role="TASK" Multiplicity="*" />
+    <End Type="Model1zerzerze.CONDITION" Role="CONDITION" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CONDITION">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TASK">
+        <PropertyRef Name="condition_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CYCLECONDITION">
+    <End Type="Model1zerzerze.CYCLE" Role="CYCLE" Multiplicity="*" />
+    <End Type="Model1zerzerze.CONDITION" Role="CONDITION" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CONDITION">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CYCLE">
+        <PropertyRef Name="condition_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEQUENCESEQUENCE">
+    <End Type="Model1zerzerze.SEQUENCE" Role="SEQUENCE" Multiplicity="0..1" />
+    <End Type="Model1zerzerze.SEQUENCE" Role="SEQUENCE1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEQUENCE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SEQUENCE1">
+        <PropertyRef Name="steady_sequence_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACCOUNTUSER">
+    <End Type="Model1zerzerze.ACCOUNT" Role="ACCOUNT" Multiplicity="1" />
+    <End Type="Model1zerzerze.USER" Role="USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TRANCIEVER" BaseType="Model1zerzerze.DEVICE">
+    <Property Name="current_analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="analog_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="digital_mask" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="current_digital_mask" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="device_id" Type="Int32" Nullable="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="io" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="battery_level" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="is_connected" Type="Boolean" Nullable="false" />
+    <Property Name="db" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>
